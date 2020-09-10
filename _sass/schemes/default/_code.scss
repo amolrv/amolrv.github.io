@@ -4,11 +4,11 @@
 .highlighter-rouge {
     font-family: $root-font-family;
 	font-size: 100%;
-	padding: 3px 4px;
+	// padding: 3px 4px;
     background-color: #e0e0e0;
     color: $code-light;
 	white-space: nowrap;
-	
+
 @media (prefers-color-scheme: dark) {
     background-color: #212c2d;
 	color: $code-dark;
@@ -88,11 +88,11 @@ figure.highlight, div.highlight {
 		border: 1px solid $code-light;
 	    border-radius: 15px;
 		box-shadow: 0 4px 30px rgba(0,0,0,.4);
-		
+
 		@media (prefers-color-scheme: dark) {
 		border: 1px solid $code-dark;
 		}
-		
+
         code {
             background-color: $code-bg;
             color: #bdbdb3;
@@ -124,12 +124,12 @@ figure.highlight, div.highlight {
 
                 color: $code-light;
                 background-color: $code-bg;
-				
+
 				@media (prefers-color-scheme: dark) {
 				border: 1px solid $code-dark;
 				color: $code-dark;
 				}
-				
+
 				@mixin media-query($device) {
 				@media screen and (max-width: $device) {
 				@content;
