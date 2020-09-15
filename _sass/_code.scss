@@ -89,10 +89,6 @@ div.highlight {
     border: 1px solid $code-light;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 
-    @media (prefers-color-scheme: dark) {
-      border: 1px solid $code-dark;
-    }
-
     code {
       background-color: $code-bg;
       color: #bdbdb3;
