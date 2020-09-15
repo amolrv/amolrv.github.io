@@ -12,13 +12,12 @@
   padding: 12px;
   color: #fff;
   background-color: #454545;
-  border-left: .3rem solid #bebebe;
+  border-left: 0.3rem solid #bebebe;
 
-  
-@media (prefers-color-scheme: dark) {
-  color: #fff;
-  background-color: #282828;
-  border-left: .3rem solid #595959;
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+    background-color: #282828;
+    border-left: 0.3rem solid #595959;
   }
 }
 
@@ -27,7 +26,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-green;
-  border-left: .3rem solid #93d080;
+  border-left: 0.3rem solid #93d080;
 }
 
 .yellow {
@@ -35,7 +34,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-yellow;
-  border-left: .3rem solid #fdcb61;
+  border-left: 0.3rem solid #fdcb61;
 }
 
 .orange {
@@ -43,7 +42,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-orange;
-  border-left: .3rem solid #f9ac6b;
+  border-left: 0.3rem solid #f9ac6b;
 }
 
 .red {
@@ -51,7 +50,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-red;
-  border-left: .3rem solid #e86c71;
+  border-left: 0.3rem solid #e86c71;
 }
 
 .purple {
@@ -59,7 +58,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-purple;
-  border-left: .3rem solid #bf61c0;
+  border-left: 0.3rem solid #bf61c0;
 }
 
 .blue {
@@ -67,7 +66,7 @@
   padding: 12px;
   color: #fff;
   background-color: $message-blue;
-  border-left: .3rem solid #2bc2ff;
+  border-left: 0.3rem solid #2bc2ff;
 }
 
 /* The close button */
