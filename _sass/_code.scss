@@ -24,10 +24,7 @@ code {
 
   font-feature-settings: "kern" off;
   font-kerning: none;
-  font-variant: none;
-
   background-color: #eef;
-
   ::selection {
     color: $code-bg;
     background: #bdbdb3;
