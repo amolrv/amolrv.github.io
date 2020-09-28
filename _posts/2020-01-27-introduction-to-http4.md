@@ -76,6 +76,6 @@ val app : HttpHandler = routes(
 
 http4k really stands with the promises they made. API from http4 are written very thoughtfully and are not opinionated. They are easy to reason and work with. Only downside can be no support for coroutine.
 
-To know more about http4k rationale visit [http4k/rationale](https://www.http4k.org/rationale/){:target="_blank"}
+To know more about http4k rationale visit [http4k/rationale](https://www.http4k.org/rationale/)
 
 [http4k]: https://www.http4k.org/
