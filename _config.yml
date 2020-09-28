@@ -1,11 +1,14 @@
 # Setup
 title: Amol Vyawhare
-# tagline: Programming adventures
+tagline: Programming adventures
+description: Notes and reference to future me
 url: https://amolrv.github.io
 paginate: 1
 baseurl: ""
 permalink: :title/
-
+twitter:
+  username: amol_vyawhare
+  card: summary
 kramdown:
     footnote_backlink: "&#10548;"
 
