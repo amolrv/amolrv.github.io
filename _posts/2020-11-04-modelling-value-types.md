@@ -38,9 +38,9 @@ Option 1 and 2 are more recommended where as option #3 is example of over modell
 You don't need to mark props as private.
 
 
-## Represent a domain concept which constraints
+## Represent a domain concept with constraint
 
-Very basic example of this type can be Email and constraint can be it need to match some fancy regex.
+Let's take an example of `email` which need to match some fancy regex.
 
 This is bit complicated one especially with kotlin because of language design. But we have 2 options here:
 
@@ -53,7 +53,7 @@ This is bit complicated one especially with kotlin because of language design. B
     }
     ```
     This option is not bad but it has few limitations and such as
-    - constructor is honest enough because it can blew on your face
+    - constructor is not honest enough because it can blew on your face
     - it can hijack your program’s execution
 1. don't use kotlin since well-known design flaw [^3] 😅
 1. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----)
