@@ -12,9 +12,12 @@ title: About
 [<i class="fab fa-facebook" title="Amol's Facebook Profile"></i>](https://www.facebook.com/amolrv)
 [<i class="fab fa-medium" title="Amol's Facebook Profile"></i>](https://www.medium.com/@amolrv)
 
-I'm Amol, a software engineer who's originally from Pune, India but living in the Berlin, Germany now. Over the course of my career I've had the pleasure of working with a great wealth of different technologies for various sized companies, mainly operating in a very agile environment following Scrum or Kanban, using continuous integration and deployment and having all the joys and stresses of building mission critical production systems.
+I'm Amol Vyawhare, and _amolrv.github.io_ is my professional blog.
+Here I write about programming, software development and design.
 
-#### Work experiense
+Over the course of my career I've had the pleasure of working with a great wealth of different technologies for various sized companies, mainly operating in a very agile environment following Scrum or Kanban, using continuous integration and deployment and having all the joys and stresses of building mission critical production systems.
+
+#### Work experience
 
 comming soon 🚀
 
