@@ -57,7 +57,7 @@ This is bit complicated one especially with kotlin because of language design. B
     - it can hijack your program’s execution
 1. don't use kotlin since well-known design flaw [^3] 😅
 1. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----)
-    There is really nice article from NoCopy author (here)[https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565]
+    There is really nice article from NoCopy author [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565)
 
 ## Summary
 Kotlin has few limitations but those can be fixed. Always go for more transparent and honest representation.
