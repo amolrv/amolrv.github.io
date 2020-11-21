@@ -4,12 +4,12 @@ permalink: /tags/
 title: Tags
 ---
 
-<div>
+<div style="text-align: center;">
 {% assign tags_sorted = site.tags | sort %}
 {% for tag in tags_sorted %}
   <div class="archive-group">
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
-	
+
     <div id="#{{ tag_name | slugize }}"></div>
 
     <h3 class="tag-head"><small>#{{ tag_name }}</small></h3>

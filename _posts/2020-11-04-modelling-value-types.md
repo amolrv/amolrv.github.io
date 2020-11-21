@@ -17,9 +17,10 @@ class Order(id: UUID,..)
 ```
 I had 2 use reason for modelling value type
 ## Type safety
-lots of time I want to distinguish between let's say `customerId` and `orderId`.
+lots of time I want to distinguish between let's say `customerId` and `orderId`
 so that accidental passing of wrong Id can be avoided.
-the best way is use inline class [^2] concept but be careful with it's stability status.
+the best way is use inline class [^2] concept but be careful
+with it's stability status.
 
 ```kotlin
 // option #1
@@ -42,7 +43,9 @@ You don't need to mark props as private.
 
 Let's take an example of `email` which need to match some fancy regex.
 
-This is bit complicated one especially with kotlin because of language design. But we have 2 options here:
+This is bit complicated one especially with kotlin because of language design.
+
+But we have 3 options here:
 
 1. Use constructor to throw violations 😟
     ```kotlin

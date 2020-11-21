@@ -7,7 +7,10 @@ tags: [http, kotlin]
 # link: https://http4k.org
 ---
 
-Couple of weeks ago, I was looking for very simple way to create web server. I found [http4k] which is a lightweight but fully-featured HTTP toolkit written in pure Kotlin that enables the serving and consuming of HTTP services in a functional and consistent way.
+Couple of weeks ago, I was looking for very simple way to create web server.
+I found [http4k] which is a lightweight but fully-featured HTTP toolkit
+written in pure Kotlin that enables the serving and consuming of HTTP services
+in a functional and consistent way.
 
 #### Some of Features of http4k
 
@@ -18,7 +21,8 @@ Couple of weeks ago, I was looking for very simple way to create web server. I f
 
 ## WebServer as Function
 
-http4k is designed as application as function. Web server can be looked as one big function which handles requests.
+http4k is designed as application as function.
+Web server can be looked as one big function which handles requests.
 so it's literally represented as typealias
 
 ```kotlin
@@ -34,12 +38,15 @@ val app: HttpHandler = {
 val server = app.asServer(SunHttp(8000)).start()
 ```
 
-Request and Response are immutable objects. SunHttp is container which only meant for development. For production use Netty, Jetty, ApacheServer etc.
+Request and Response are immutable objects.
+SunHttp is container which only meant for development.
+For production use Netty, Jetty, ApacheServer etc.
 Because `app` is just kotlin function, it can be composed very easily.
 
 ## Filters
 
-http4k provides a Filter function which is basically intercept the Request/Response pipeline and
+http4k provides a `Filter` function which is basically
+to intercept the Request/Response pipeline.
 
 ```kotlin
 typealias Filter = (HttpHandler) -> HttpHandler
@@ -60,7 +67,9 @@ val composedApp = setContentType.then(app)
 
 ## Routing and composition
 
-http4k provides some high level functions which helps to compose application which handles each request differently depending upon url, method etc. These functions accepts multiple httpHandlers and return one handler which is composed of them.
+http4k provides some high level functions which helps to compose application
+which handles each request differently depending upon url, method etc.
+These functions accepts multiple httpHandlers and return composed handler.
 
 ```kotlin
 val app : HttpHandler = routes(
@@ -74,7 +83,10 @@ val app : HttpHandler = routes(
 
 ## Conclusion
 
-http4k really stands with the promises they made. API from http4 are written very thoughtfully and are not opinionated. They are easy to reason and work with. Only downside can be no support for coroutine.
+http4k really stands with the promises they made.
+API from http4 are written very thoughtfully and are not opinionated.
+They are easy to reason and work with.
+Only downside can be no support for coroutine.
 
 To know more about http4k rationale visit [http4k/rationale](https://www.http4k.org/rationale/)
 

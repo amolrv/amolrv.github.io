@@ -15,8 +15,33 @@
 @import "message";
 @import "buttons";
 
-// font awesome customization
-.fab {
-  font-size: 1rem;
-  padding-right: 0.2rem;
+// site
+.page-title, .post-title, .post-date {
+  text-align: center;
+}
+
+// About me
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.fab-me {
+  border-radius: 50%;
+}
+
+.about-me {
+  display: flex;
+  flex-flow: column;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+
+  .fab {
+    padding-right: 0.2rem;
+  }
 }
