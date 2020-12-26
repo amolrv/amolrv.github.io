@@ -63,7 +63,6 @@ code.highlight {
 
 /* Block code, no highlight */
 pre {
-  border-radius: 5px;
   margin: 30px * 0.75 30px / 2;
   padding: 15px 17px;
   overflow-x: auto;
@@ -84,7 +83,6 @@ div.highlight {
   pre {
     background-color: $code-bg;
     border: 1px solid $code-light;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 
     code {
       background-color: $code-bg;
