@@ -51,7 +51,8 @@ But we have 3 options here:
     ```kotlin
     data class Email(val value: String) {
         init {
-            // if (!isValid(value)) then throw InvalidEmail()
+            // if (!isValid(value))
+            // then throw InvalidEmail()
         }
     }
     ```

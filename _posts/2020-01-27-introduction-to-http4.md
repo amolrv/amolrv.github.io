@@ -62,7 +62,6 @@ val setContentType = Filter { nextHandler ->
     }
 
 val composedApp = setContentType.then(app)
-
 ```
 
 ## Routing and composition

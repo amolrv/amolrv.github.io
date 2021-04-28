@@ -1,11 +1,11 @@
 ---
 layout: page
-title: About
+title: ""
 ---
 
 <div class="about-me center">
 <image
-    src="https://avatars0.githubusercontent.com/u/14291758?s=460&amp;u=12adb7f01dd56239376a62aaf7d0ec19d423fbc4&amp;v=4"
+    src="https://avatars.githubusercontent.com/u/14291758?v=4"
     alt ="Amol Vyawhare" class="fab-me" />
 <div class ="social-links">
 <a href="https://www.linkedin.com/in/amol"><i class="fab fa-linkedin" title="Amol's Linked in Profile"></i></a>
