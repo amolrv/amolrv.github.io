@@ -1,0 +1,67 @@
+---
+# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
+# only main files contain this front matter, not partials.
+---
+
+@import "variables";
+@import "base";
+@import "type";
+@import "syntax";
+@import "code";
+@import "layout";
+@import "masthead";
+@import "posts";
+@import "pagination";
+@import "message";
+@import "buttons";
+
+// About me
+.center {
+  @media (min-width: $large-breakpoint) {
+    float: right;
+    max-width: 276px;
+  }
+}
+.fab-me {
+  border-radius: 50%;
+}
+.home {
+  .between-line {
+    font-style: italic;
+    color: $body-color-5;
+    @media (prefers-color-scheme: dark){
+      color: $body-color-5-dark;
+    }
+  }
+}
+
+.fa {
+  color: $light-accent;
+  @media (prefers-color-scheme: dark){
+    color: $dark-accent;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+
+  .fab {
+    padding-right: 0.2rem;
+  }
+}
+
+@media print {
+  .noprint {display:none !important;}
+  .noshow {display:block !important;}
+  .body {
+    font-size: .85rem;
+  }
+}
+
+.tag-head {
+  > .fa-tag {
+    font-size: .85rem;
+  }
+}

@@ -1,0 +1,23 @@
+---
+layout: page
+permalink: /tags/
+title: Tags <i class="fa fa-tags"></i>
+---
+
+<div>
+{% assign tags_sorted = site.tags | sort %}
+{% for tag in tags_sorted %}
+  <div class="archive-group">
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+
+    <h2 class="tag-head"><a name="{{ tag_name | slugize }}">{{ tag_name }}</a> <i class="fa fa-tag"></i></h2>
+    <ul>
+      {% for post in site.tags[tag_name] %}
+    <li class="archive-item">
+      <a href="{{ post.url }}">{{ post.title }}{% if post.link %}<span class="link-arrow"> &rarr;</span>{% endif %}</a>
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+</div>

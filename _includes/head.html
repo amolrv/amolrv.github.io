@@ -1,0 +1,43 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="{{ site.baseurl }}/assets/iMessage.png" />
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}{% if site.tagline %} | {{ site.tagline }}{% endif %}
+    {% else %}
+      {{ page.title }} | {{ site.title }}
+    {% endif %}
+  </title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
+  <style>
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <script src="{{ site.baseurl }}/assets/turbo.es2017-esm.js" type="module"></script>
+
+  {% seo:title=false %}
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  {% if site.ga_analytics %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179175457-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_analytics }}');
+  </script>
+  {% endif %}
+</head>
