@@ -5,6 +5,13 @@
 .masthead {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  .brand-icon {
+    display: inline-block;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+  }
 }
 
 .masthead-title {
