@@ -27,6 +27,5 @@ title: Home
   <li><i class="fa-li fa fa-twitter"></i> I <a href="https://twitter.com/{{site.twitter.username}}">Tweet</a> a little bit. <p class="between-line">The main social media I have been using for the past few years and by far the best place to learn new and old things in my domain and to get in touch with great minds.</p></li>
   <li><i class="fa-li fa fa-question-circle"></i>You can read my <a href="/resume">resume</a><p class="between-line">If you are curious about my background...</p></li>
   <li><i class="fa-li fa fa-rss-square"></i>You can subscribe to the <a href="/feed.xml">RSS</a> feed.<p class="between-line">Yeah, it's old school</p></li>
-  <li><i class="fa-li fa fa-heart"></i>With Love!<p class="between-line">What Else?</p></li>
   </ul>
 </div>
