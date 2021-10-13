@@ -25,7 +25,10 @@
 		"vscode-icons-team.vscode-icons",
 		"streetsidesoftware.code-spell-checker",
 		"eamodio.gitlens",
-		"davidanson.vscode-markdownlint"
+		"davidanson.vscode-markdownlint",
+		"yzhang.markdown-all-in-one",
+		"christian-kohler.path-intellisense",
+		"redhat.vscode-xml"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
