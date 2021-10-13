@@ -149,7 +149,7 @@ fun main() = runBlocking {
 
 ### Summary
 
-Coroutine, dispatcher along with suspended function provides very powerful mechanism to have full control over execution of code blocks. Default function such as `delay` are cancel aware functions.
+Coroutine, dispatcher along with suspended functions provides very powerful mechanism to have full control over execution of code blocks. Default function such as `delay` are cancel aware functions.
 To summarize, I would say use following thumb rules to achieve fine controlled code
 
 1. Have more suspension points in code base
