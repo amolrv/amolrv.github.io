@@ -26,6 +26,9 @@ layout: default
       {% endfor %}
     </span>
 </time>
+{% if page.image %}
+<image src="{{ page.image }}" class="banner" alt="{{ page.title }}" title="{ {page.title }}"></image>
+{% endif %}
 
   {{ content | smartify }}
 
