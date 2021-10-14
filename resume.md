@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Resume
+description: Amol Vyawhare, Software Engineer, Berlin
 ---
 
 # Amol Vyawhare

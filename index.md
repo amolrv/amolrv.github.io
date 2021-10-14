@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+description: Amol Vyawhare, Software Engineer, Berlin
 ---
 # Hi and Welcome
 
