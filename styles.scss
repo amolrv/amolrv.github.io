@@ -59,8 +59,8 @@
 @media print {
   .noprint {display:none !important;}
   .noshow {display:block !important;}
-  .body {
-    font-size: .85rem;
+  body {
+    font-size: 16px;
   }
   .giscus {
     display: none!important;
