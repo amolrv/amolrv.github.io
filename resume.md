@@ -2,6 +2,7 @@
 layout: default
 title: Resume
 description: Amol Vyawhare, Software Engineer, Berlin
+image: https://avatars.githubusercontent.com/u/14291758?v=4
 ---
 
 # Amol Vyawhare
@@ -80,4 +81,3 @@ Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com](mailto:amol.
 - Worked on various assignments which involved development of desktop applications and
     web application in education and health care domain.
 - Used various third-party UI tools to deliver quality.
-
