@@ -7,8 +7,8 @@ image: https://avatars.githubusercontent.com/u/14291758?v=4
 
 # Amol Vyawhare
 
-Berlin, Germany \| +49 1514 1369 131 \| [9tzrss9gc4@privaterelay.appleid.com
-](mailto:9tzrss9gc4@privaterelay.appleid.com
+Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com
+](mailto:amol.vyawhare@outlook.com
 )
 
 ### <i class="fa fa-code"></i> Skills
