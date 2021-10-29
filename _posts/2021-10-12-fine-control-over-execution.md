@@ -11,7 +11,7 @@ In this blog post we'll take see how to cancel coroutine and impact of suspend f
 
 ## Basics
 
-The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="_blank"} interface has a method called [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="_blank"}, which allows to cancel the job.
+The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="blank"} interface has a method called [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="blank"}, which allows to cancel the job.
 
 ```kotlin
 fun main() = runBlocking {
@@ -73,7 +73,9 @@ let's extract repeat code block into suspended function.
 ```kotlin
 fun main() = runBlocking {
     val job = launch {
-        repeat(1_00) { i -> threadBlockingFn(i) }
+        repeat(1_00) {
+          threadBlockingFn(it)
+        }
         println("job completed")
     }
     delay(1_150)
@@ -106,9 +108,11 @@ In order to have more fine control, lets create coroutine for every call of `thr
 ```kotlin
 fun main() = runBlocking {
     val job = launch {
-        repeat(1_00) { i -> launch { threadBlockingFn(i) }.join()   }
+        repeat(1_00) {
+          launch { threadBlockingFn(it) }.join()
+        }
         // also produces same output
-        // repeat(1_00) { i -> async { threadBlockingFn(i) }.await()   }
+        // repeat(1_00) { async { threadBlockingFn(it) }.await()   }
         println("job completed")
     }
     delay(1_150)
@@ -130,7 +134,11 @@ Lets use default dispatcher to delegate `threadBlockFn` execution
 ```kotlin
 fun main() = runBlocking {
     val job = launch {
-        repeat(1_00) { i -> withContext(Dispatchers.Default) { threadBlockingFn(i) } }
+        repeat(1_00) { 
+          withContext(Dispatchers.Default) { 
+            threadBlockingFn(it) 
+          } 
+        }
         println("job completed")
     }
     delay(1_150)

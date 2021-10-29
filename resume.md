@@ -7,7 +7,9 @@ image: https://avatars.githubusercontent.com/u/14291758?v=4
 
 # Amol Vyawhare
 
-Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
+Berlin, Germany \| +49 1514 1369 131 \| [9tzrss9gc4@privaterelay.appleid.com
+](mailto:9tzrss9gc4@privaterelay.appleid.com
+)
 
 ### <i class="fa fa-code"></i> Skills
 
@@ -73,7 +75,7 @@ Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com](mailto:amol.
 - #### Loyalty based web application for promotion of sales
 
    This was web application mainly used for increasing sales using promotions. Contributed as front-end developer and was responsible for promotion module.
-  
+
    Tech stack: `asp.net core`, `ms-sql`, `angular`
 
 ### <i class="fa fa-code-branch"></i> Nov 2012 - May 2014 @Vatsa, Pune
