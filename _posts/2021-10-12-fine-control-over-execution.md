@@ -1,4 +1,6 @@
 ---
+categories: [blog]
+permalink: fine-control-over-execution
 title: Fine control over execution in kotlin
 layout: post
 date: 2021-10-12 10:00:00

@@ -1,5 +1,7 @@
 ---
+categories: [blog]
 title: Introduction to Http4k
+permalink: introduction-to-http4
 layout: post
 date: 2020-01-27 09:52:21
 tags: [http4k, kotlin]

@@ -5,7 +5,7 @@ description: Notes and reference to future me
 url: https://amolrv.github.io
 paginate: 1
 baseurl: ""
-permalink: :title/
+permalink: /:categories/:year/:month/:day/:title
 twitter:
   username: amol_vyawhare
   card: summary

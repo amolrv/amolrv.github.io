@@ -12,7 +12,8 @@ layout: default
   <h1 class="post-title">{{ page.title | smartify }}</h1>
   {% endif %}
   <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
-    <span title="publish date"><i class="fa fa-edit"></i> {{ page.date | date_to_long_string: "ordinal", "US" }}&nbsp;</span>
+    <span title="publish date"><i class="fa fa-edit"></i> {{ page.date | date_to_long_string: "ordinal", "US"
+      }}&nbsp;</span>
     <span class="tag-list">
       {% if post %}
       {% assign tags = post.tags %}
@@ -25,10 +26,15 @@ layout: default
       <a href="{{site.baseurl}}/tags/#{{tag|slugize}}">{{tag}}{% unless forloop.last %},&nbsp;{% endunless %}</a>
       {% endfor %}
     </span>
-</time>
-{% if page.image %}
-<image src="{{ page.image }}" class="banner" alt="{{ page.title }}" title="{ {page.title }}"></image>
-{% endif %}
+  </time>
+  
+  {% if page.image %}
+  <image 
+    src="{{ page.image }}" 
+    class="banner" alt="{{ page.title }}" 
+    title="{{ page.title }}">
+  </image>
+  {% endif %}
 
   {{ content | smartify }}
 
@@ -42,15 +48,8 @@ layout: default
   <a class="next" href="{{page.next.url}}">Next →</a>
   {% endif %}
 </div>
-<script src="https://giscus.app/client.js"
-        data-repo="amolrv/amolrv.github.io"
-        data-repo-id="MDEwOlJlcG9zaXRvcnk0MDU0NzI3MTc="
-        data-category="General"
-        data-category-id="DIC_kwDOGCsFzc4B_BQv"
-        data-mapping="title"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-theme="preferred_color_scheme"
-        crossorigin="anonymous"
-        async>
-</script>
+<script src="https://giscus.app/client.js" data-repo="amolrv/amolrv.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk0MDU0NzI3MTc=" data-category="General" data-category-id="DIC_kwDOGCsFzc4B_BQv"
+  data-mapping="title" data-reactions-enabled="1" data-emit-metadata="1" data-theme="preferred_color_scheme"
+  crossorigin="anonymous" async>
+  </script>
