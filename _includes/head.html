@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% unless page.image %}
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/apple-touch-icon.png" />
-  {% endunless %}  
+  {% endunless %}
   <title>
     {% if page.title == "Home" %}
       {{ site.title }}{% if site.tagline %} | {{ site.tagline }}{% endif %}
@@ -32,8 +32,9 @@
       font-style: normal;
     }
   </style>
-  <script src="{{ site.baseurl }}/assets/turbo.es2017-esm.js" type="module"></script>
-
+  <script type="module">
+    import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+ </script>
   {% seo:title=true %}
 
   <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
