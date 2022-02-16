@@ -1,7 +1,7 @@
 ---
 categories: [blog]
 permalink: nature-impact-value-of-change
-title: Nature, impact and value of change
+title: Nature, Impact and Value of Change
 layout: post
 date: 2022-02-15 10:00:00
 tags: [change, development, lesson]
