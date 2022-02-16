@@ -12,8 +12,7 @@ image: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 
 ## Situation 🤺
 
-Like my other colleagues, I also have been part of such *Task force* couple of times. But recently in my task force, it was becoming very hard to come up with proper release plan. We're struggling to make a release plan which can be delivered
-*incrementally* and *iteratively*.
+Like my other colleagues, I also have been part of such *Task force* couple of times. But recently in my task force, it was becoming very hard to come up with proper release plan. We're struggling to make a release plan which can be delivered *incrementally* and *iteratively*.
 
 ## Background 📜
 
