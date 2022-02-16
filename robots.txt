@@ -3,4 +3,4 @@ Disallow:
 
 Allow: /
 
-sitemap: https://amolrv.github.io/sitemap.xml
+sitemap: https://amolvyawhare.com/sitemap.xml
