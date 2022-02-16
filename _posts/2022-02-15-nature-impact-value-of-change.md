@@ -4,9 +4,13 @@ permalink: nature-impact-value-of-change
 title: Nature, impact and value of change
 layout: post
 date: 2022-02-15 10:00:00
-tags: [change, development]
+tags: [change, development, lesson]
 image: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 ---
+
+*In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.
+
+## Situation
 
 Like my other colleagues, I also have been part of such *Task force* couple of times. But recently in my task force, it was becoming very hard to come up with proper release plan. We're struggling to make a release plan which can be delivered
 *incrementally* and *iteratively*.
@@ -40,8 +44,11 @@ After doing this analysis and spending few hours, I realised more than 70 % chan
 
 For breaking changes, I did one extra step I asked same 3 questions for existing feature. After answeing same question, I know exactly what we're taking out and giving back to the user. It was also very easy to spot a gap now and finding filler for that gap.
 
-> In summary I learned that understanding *nature*, *impact* and *value* it brings to the user are very crucial aspects.
+In summary
+>I learned that understanding *nature*, *impact* and *value* it brings to the user are very crucial aspects.
 
 ---
 
-*Picture credits goes to [Aziz Acharki](https://unsplash.com/photos/PUvPZckRnOg)*
+1. *Picture credits goes to [Aziz Acharki](https://unsplash.com/photos/PUvPZckRnOg)*
+
+2. *NOTE: If you have similar learning, please share your experience with me. There is always something new about every experiecece.*
