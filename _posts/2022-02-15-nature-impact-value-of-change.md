@@ -8,9 +8,9 @@ tags: [change, development, lesson]
 cover_image: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 ---
 
-*In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.
+*In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.*
 
-## Situation
+## Situation 🤺
 
 Like my other colleagues, I also have been part of such *Task force* couple of times. But recently in my task force, it was becoming very hard to come up with proper release plan. We're struggling to make a release plan which can be delivered
 *incrementally* and *iteratively*.
@@ -31,11 +31,13 @@ Task force has following responsiblity 💪
 
 We had few brainstorming meetings but still picture was not very clear in our head; so I decided to analyse this epic critically and come up some options.
 
+## What we did 🤞
+
 I decided to start from clean slate and look at this feature from users point of view. To do that I asked following question for each concepts and change that we wanted to bring in.
 
-1. What problem it solves for user?
-1. What problem it might create for user?
-1. What is the nature of this changes?
+1. *What problem it solves for user?*
+1. *What problem it might create for user?*
+1. *What is the nature of this changes?*
    - *Breaking change* - if it *breaks or changes existing concept/feature drastically* and *changes affects user flow*.
    - *New change* - there was *no such concepts exist before* into the system before and it *may or may not  affect user flow*.
    - *Enhancement* - changes *refines existing concepts* but not so drastically and may  not affect user flow.
