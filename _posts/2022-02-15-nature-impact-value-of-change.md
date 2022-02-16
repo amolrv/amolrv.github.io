@@ -21,7 +21,7 @@ Like my other colleagues, I also have been part of such *Task force* couple of t
 
 At [layer](https://golayer.io/about/) we form a triplet of *Tech, Product and Business* in order to refine features. Mostly one person from each area. Sometimes Product owner represents expertise in business or act as proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such triplet as *Task force*.
 
-Task force has following responsiblity 💪
+Task force has following responsibility 💪
 
 - Refine feature aka epic
 - Be a point of contact for all the QA during crunch time.
@@ -42,7 +42,7 @@ I decided to start from clean slate and look at this feature from users point of
    - *New change* - there was *no such concepts exist before* into the system and it *may or may not  affect user flow*.
    - *Enhancement* - changes *refines existing concepts* but not so drastically and may  not affect user flow.
 
-After doing this analysis and spending few hours, I realised more than 70 % changes were either enhancement and new changes and ~ 30 % were breaking changes. Just doing analysis unblocked very big chunck of feature and it bring ton of clarity in my head.
+After doing this analysis and spending few hours, I realised more than 70 % changes were either enhancement and new changes and ~ 30 % were breaking changes. Just doing analysis unblocked very big chunk of feature and it bring ton of clarity in my head.
 
 For breaking changes, I did one extra step I asked same 3 questions for existing feature to gain more clarity. After that, I knew exactly what we're taking out and giving back to the user. Now it was very easy to spot and fill the gaps.
 
@@ -53,4 +53,4 @@ In summary
 
 1. *Picture credits goes to [Aziz Acharki](https://unsplash.com/photos/PUvPZckRnOg)*
 
-2. *NOTE: If you have similar learning, please share your experience with me. There is always something new about every experiecece.*
+2. *NOTE: If you have similar learning, please share your experience with me. There is always something new about every experience.*
