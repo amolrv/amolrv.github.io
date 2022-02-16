@@ -5,7 +5,7 @@ title: Nature, Impact and Value of Change
 layout: post
 date: 2022-02-15 10:00:00
 tags: [change, development, lesson]
-image: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
+cover_cover_image: http://amolvyawhare.com/assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 ---
 
 *In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.
