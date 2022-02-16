@@ -39,12 +39,12 @@ I decided to start from clean slate and look at this feature from users point of
 1. *What problem it might create for user?*
 1. *What is the nature of this changes?*
    - *Breaking change* - if it *breaks or changes existing concept/feature drastically* and *changes affects user flow*.
-   - *New change* - there was *no such concepts exist before* into the system before and it *may or may not  affect user flow*.
+   - *New change* - there was *no such concepts exist before* into the system and it *may or may not  affect user flow*.
    - *Enhancement* - changes *refines existing concepts* but not so drastically and may  not affect user flow.
 
 After doing this analysis and spending few hours, I realised more than 70 % changes were either enhancement and new changes and ~ 30 % were breaking changes. Just doing analysis unblocked very big chunck of feature and it bring ton of clarity in my head.
 
-For breaking changes, I did one extra step I asked same 3 questions for existing feature. After answeing same question, I know exactly what we're taking out and giving back to the user. It was also very easy to spot a gap now and finding filler for that gap.
+For breaking changes, I did one extra step I asked same 3 questions for existing feature to gain more clarity. After that, I knew exactly what we're taking out and giving back to the user. Now it was very easy to spot and fill the gaps.
 
 In summary
 >I learned that understanding *nature*, *impact* and *value* it brings to the user are very crucial aspects.
