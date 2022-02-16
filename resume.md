@@ -2,7 +2,7 @@
 layout: default
 title: Resume
 description: Amol Vyawhare, Software Engineer, Berlin
-cover_image: https://avatars.githubusercontent.com/u/14291758?v=4
+image: https://avatars.githubusercontent.com/u/14291758?v=4
 ---
 
 # Amol Vyawhare
