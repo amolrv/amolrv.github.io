@@ -56,6 +56,15 @@
   }
 }
 
+.hero-body {
+  border-left: 12px solid; 
+  border-color: $light-accent;
+  @media (prefers-color-scheme: dark){
+    border-color: $dark-accent;
+  }
+  padding: 1.5rem;
+}
+
 @media print {
   .noprint {display:none !important;}
   .noshow {display:block !important;}

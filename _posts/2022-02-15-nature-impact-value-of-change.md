@@ -34,12 +34,12 @@ We had few brainstorming meetings but still picture was not very clear in our he
 
 I decided to start from clean slate and look at this feature from users point of view. To do that I asked following question for each concepts and change that we wanted to bring in.
 
-1. *What problem it solves for user?*
-1. *What problem it might create for user?*
-1. *What is the nature of this changes?*
-   - *Breaking change* - if it *breaks or changes existing concept/feature drastically* and *changes affects user flow*.
-   - *New change* - there was *no such concepts exist before* into the system and it *may or may not  affect user flow*.
-   - *Enhancement* - changes *refines existing concepts* but not so drastically and may  not affect user flow.
+1. What problem it solves for user?
+1. What problem it might create for user?
+1. What is the nature of this changes?
+   - Breaking change - if it breaks or changes existing concept/feature drastically and changes affects user flow.
+   - New change - there was no such concepts exist before into the system and it may or may not  affect user flow.
+   - Enhancement - changes refines existing concepts but not so drastically and may  not affect user flow.
 
 After doing this analysis and spending few hours, I realised more than 70 % changes were either enhancement and new changes and ~ 30 % were breaking changes. Just doing analysis unblocked very big chunk of feature and it bring ton of clarity in my head.
 

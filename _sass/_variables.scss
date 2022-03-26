@@ -2,7 +2,7 @@
 
 $light: #333;
 $dark: #ddd;
-$light-accent: #c25;
+$light-accent: #B02B2C;
 $dark-accent: mediumaquamarine;
 
 // Highlighting color for code block borders and language name.
@@ -17,22 +17,21 @@ $message-red: #e03940;
 $message-purple: #953c96;
 $message-blue: #009ddc;
 
-$root-font-family: "PT Sans", Helvetica, Arial, sans-serif, -apple-system,
-  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji" !default;
+$root-font-family: 'Merriweather', Georgia;
 $code-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace !default;
 $root-font-size: 16px;
 $root-line-height: 1.5;
 
-$body-color: rgba(0, 0, 0, 0.8);
-$body-bg: rgba(0, 0, 0, 0.03);
-$body-color-dark: hsla(0, 0%, 100%, 0.8);
+$body-color: rgb(74, 74, 74);
+$body-bg: rgba(0, 0, 0, 0);
 $body-bg-dark: rgba(0, 0, 0, 0.85);
+
+$body-color-dark: hsla(0, 0%, 100%, 0.8);
+
 
 $body-color-5: rgba(0, 0, 0, 0.5);
 $body-color-5-dark:hsla(0, 0%, 100%, 0.5);
 
 $large-breakpoint: 38em;
-$large-font-size: 20px;
+$large-font-size: 1em;

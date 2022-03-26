@@ -15,13 +15,12 @@ h6 {
     color: $dark;
   }
   position: relative;
-  border-bottom: 1px solid silver;
   padding-bottom: .2rem;
   margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -99,16 +98,14 @@ span.link-arrow {
 }
 
 blockquote {
-  width: 100%;
-  padding: 0.25em 90px 0.25em 25px;
-  margin: 30px auto;
-  font-style: italic;
-  position: relative;
-  opacity: 0.7;
-  border-left: 3px solid #d4d4d4;
+  border-left: 3px solid ;
+  border-color: $light-accent;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  padding-left: 1.25rem;
 
   @media (prefers-color-scheme: dark) {
-    border-left: 3px solid #333333;
+    border-color: $dark-accent;
   }
 
   p:last-child {
