@@ -3,4 +3,4 @@ Disallow:
 
 Allow: /
 
-sitemap: https://amolvyawhare.com/sitemap.xml
+sitemap: https://amol.me/sitemap.xml
