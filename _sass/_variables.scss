@@ -1,37 +1,135 @@
-// Color scheme for light and dark modes.
+// Typography
+$base-font-size: 14px !default;
+$bold-font-weight: bold !default;
+$font-family: 'Merriweather', 'PT Serif', Georgia, 'Times New Roman', serif !default;
+$line-height: 1.5 !default;
+$heading-font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif !default;
+$heading-font-weight: 900 !default;
+$heading-line-height: 1.25 !default;
+$monospace-font-family: 'Source Code Pro', Consolas, monospace !default;
+$h1: 2.998rem !default;
+$h2: 1.5rem !default;
+$h3: 1.25rem !default;
+$h4: 1rem !default;
+$h5: .875rem !default;
+$h6: .75rem !default;
+$h00: 4rem !default;
+$h0: 3rem !default;
+$h00-responsive: 8vw !default;
+$h0-responsive: 6vw !default;
+$h1-responsive: 4vw !default;
+$h00-responsive-max: 7.68rem !default;
+$h0-responsive-max: 5.76rem !default;
+$h1-responsive-max: 3.84rem !default;
+$abbr-border-bottom: 1px black dotted;
 
-$light: #333;
-$dark: #ddd;
-$light-accent: #B02B2C;
-$dark-accent: mediumaquamarine;
+// Page width
+$measure-width: 42rem !default;
 
-// Highlighting color for code block borders and language name.
+// Viewport widths
+$viewport-small: 32em;
+$viewport-medium: 48em;
+$viewport-large: 64em;
 
-$code-light: #333;
-$code-dark: #ddd;
+// Colors
+$blue: #0076df !default;
+$red: #f95020 !default;
+$green: #00cf26 !default;
+$yellow: #efcc00 !default;
+$orange: #ffcc22 !default;
+$purple: #f92080 !default;
+$dark-blue: #00369f !default;
+$green: #00ab37 !default;
+$dark-green: #009f06 !default;
+$light-pink: #ffdddd !default;
+$light-green: #ddffdd !default;
+$dark-gray: #333 !default;
+$mid-gray: #777 !default;
+$light-gray: #ccc !default;
+$lighter-gray: #eee !default;
+$darken-1: rgba(#000,.0625) !default;
+$darken-2: rgba(#000,.125) !default;
+$darken-3: rgba(#000,.25) !default;
+$darken-4: rgba(#000,.5) !default;
 
-$message-green: #62bb47;
-$message-yellow: #fcb827;
-$message-orange: #f6821f;
-$message-red: #e03940;
-$message-purple: #953c96;
-$message-blue: #009ddc;
+// Links
+$link-color: $blue;
+$link-hover-color: darken($blue, 40%);
 
-$root-font-family: 'Merriweather', Georgia;
-$code-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas,
-  "Liberation Mono", "Courier New", monospace !default;
-$root-font-size: 16px;
-$root-line-height: 1.5;
+// Breakpoints
+$breakpoint-md: '(min-width: 52em)';
+$breakpoint-xl: '(min-width: 96em)';
 
-$body-color: rgb(74, 74, 74);
-$body-bg: rgba(0, 0, 0, 0);
-$body-bg-dark: rgba(0, 0, 0, 0.85);
+// Whitespace
+$space-1: .5rem !default;
+$space-2: 1rem !default;
+$space-3: 2rem !default;
+$space-4: 4rem !default;
 
-$body-color-dark: hsla(0, 0%, 100%, 0.8);
+// Buttons
+$button-font-size: inherit !default;
+$button-font-weight: normal !default;
+$button-line-height: 1.125rem !default;
+$button-padding-y: .5rem !default;
+$button-padding-x: 1rem !default;
+$button-font-family: $heading-font-family;
 
+// Forms
+$form-field-font-size: 1rem !default;
+$form-field-height: 2.25rem !default;
+$form-field-padding-y: .5rem !default;
+$form-field-padding-x: .5rem !default;
 
-$body-color-5: rgba(0, 0, 0, 0.5);
-$body-color-5-dark:hsla(0, 0%, 100%, 0.5);
+// Borders
+$border-color: $light-gray !default;
+$border-width: 1px !default;
+$border-radius: 3px !default;
 
-$large-breakpoint: 38em;
-$large-font-size: 1em;
+// Forms
+$form-field-font-size: 1rem;
+$form-field-height: 2.25rem;
+$form-field-padding-y: .5rem;
+$form-field-padding-x: .5rem;
+
+// Code
+$pre-border-radius: 0;
+$pre-background-color: #fafafa;
+$hljs-comment: $mid-gray;
+$hljs-keyword: $dark-blue;
+$hljs-name: $dark-gray;
+$hljs-number: $dark-green;
+$hljs-string: $red;
+$hljs-title: $red;
+$hljs-type: $dark-blue;
+$hljs-tag: $dark-blue;
+$hljs-attribute: $dark-green;
+$hljs-regexp: $dark-green;
+$hljs-symbol: $purple;
+$hljs-built-in: $dark-blue;
+$hljs-preprocessor: $mid-gray;
+$hljs-deletion: $light-pink;
+$hljs-addition: $light-green;
+$hljs-change: $dark-blue;
+$hljs-chunk: $light-gray;
+
+// Header
+$header-border-top: thin solid #f3f3f3;
+$header-color: $dark-gray;
+$header-bg-color: #fafafa;
+$header-font-weight: 300;
+
+// Nav
+$nav-color: $mid-gray;
+$nav-link-color: #444;
+$nav-padding: $space-2;
+$nav-link-padding-x: $space-2;
+$nav-link-border-bottom: 2px solid #444;
+$nav-active-border-bottom: 1px solid $light-gray;
+
+// Footer
+$footer-border-top: thin solid #f3f3f3;
+$footer-padding: $space-3;
+$footer-color: #7a7a7a;
+$footer-bg-color: #fafafa;
+$footer-font-weight: 300;
+$footer-font-size: .75rem;
