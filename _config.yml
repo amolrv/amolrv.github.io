@@ -20,9 +20,9 @@ google_tag_manager:
 bing_verification:
 
 # Optional features
-animated:             false
+animated:             true
 show_related_posts:   true
-show_post_footers:    true
+show_post_footers:    false
 show_social_icons:    true
 enable_mathjax: false
 extended_fonts: false
@@ -100,7 +100,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     10
 sass:
   style: compressed
 plugins:
