@@ -14,10 +14,6 @@ image: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 
 Like my other colleagues, I also have been part of such *Task force* couple of times. But recently in my task force, it was becoming very hard to come up with proper release plan. We're struggling to make a release plan which can be delivered *incrementally* and *iteratively*.
 
-## Background 📜
-
-### What is task force ? 🤔
-
 At [layer](https://golayer.io/about/) we form a triplet of *Tech, Product and Business* in order to refine features. Mostly one person from each area. Sometimes Product owner represents expertise in business or act as proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such triplet as *Task force*.
 
 Task force has following responsibility 💪
@@ -26,9 +22,7 @@ Task force has following responsibility 💪
 - Be a point of contact for all the QA during crunch time.
 - Prepare release plan
 
-## Still picture was not very clear in 🧠
-
-We had few brainstorming meetings but still picture was not very clear in our head; so I decided to analyse this epic critically and come up some options.
+So we had few brainstorming meetings but still picture was not very clear in our head; so I decided to analyse this epic critically and come up some options.
 
 ## What we did 🤞
 

@@ -23,7 +23,7 @@ p,
 dl,
 ol,
 ul {
-  font-size: $h4;
+  font-size: $base-font-size;
   margin-top: 0;
   margin-bottom: $space-2;
 }
@@ -55,14 +55,13 @@ blockquote {
   margin-top: $space-3;
   margin-bottom: $space-3;
   margin-left: 0;
-  padding-left: $space-2;
-  padding-right: $space-2;
 }
 
 blockquote,
 blockquote p {
-  font-size: $h3;
+  font-size: $base-font-size;
   font-style: italic;
+  margin-bottom: 0;
 }
 
 h1,
