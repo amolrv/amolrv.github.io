@@ -39,11 +39,4 @@ After doing this analysis and spending few hours, I realised more than 70 % chan
 
 For breaking changes, I did one extra step I asked same 3 questions for existing feature to gain more clarity. After that, I knew exactly what we're taking out and giving back to the user. Now it was very easy to spot and fill the gaps.
 
-In summary
->I learned that understanding *nature*, *impact* and *value* it brings to the user are very crucial aspects.
-
----
-
-1. *Picture credits goes to [Aziz Acharki](https://unsplash.com/photos/PUvPZckRnOg)*
-
-2. *NOTE: If you have similar learning, please share your experience with me. There is always something new about every experience.*
+> In summary, I learned that understanding *nature*, *impact* and *value* of change, can be very helpful how how you plan to deliver feature.
