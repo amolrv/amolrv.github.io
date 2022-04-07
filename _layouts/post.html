@@ -17,11 +17,12 @@ layout: default
     <span class="post-meta small">{{ site.text.post.updated | default: "Updated" }}: {{ page.update_date | date: site.date_format }}</span><br>
   {% endif %}
   <span class="post-meta small">
-  {% if page.minutes %}
+    <!-- add config -->
+  <!-- {% if page.minutes %}
     {{ page.minutes }} {{ site.text.post.minute_read | default: "minute read" }}
   {% else %}
     {{ minutes }} {{ site.text.post.minute_read | default: "minute read" }}
-  {% endif %}
+  {% endif %} -->
   </span>
 </div>
 
