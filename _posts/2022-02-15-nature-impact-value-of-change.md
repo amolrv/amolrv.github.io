@@ -8,7 +8,7 @@ tags: [change, development, lesson]
 image: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
 ---
 
-*In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.*
+In this article, I'm sharing lesson and learning about change. How understanding **nature, impact and value of change** resulted into more clarity and confidence and helped me to prepare release plan.
 
 ## Situation 🤺
 

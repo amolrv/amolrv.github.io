@@ -24,7 +24,7 @@ $h1-responsive-max: 3.84rem !default;
 $abbr-border-bottom: 1px black dotted;
 
 // Page width
-$measure-width: 42rem !default;
+$measure-width: 28rem !default;
 
 // Viewport widths
 $viewport-small: 32em;
@@ -114,8 +114,7 @@ $hljs-chunk: $light-gray;
 
 // Header
 $header-border-top: thin solid #f3f3f3;
-$header-color: $dark-gray;
-$header-bg-color: #fafafa;
+$header-color: $mid-gray;
 $header-font-weight: 300;
 
 // Nav
@@ -127,9 +126,9 @@ $nav-link-border-bottom: 2px solid #444;
 $nav-active-border-bottom: 1px solid $light-gray;
 
 // Footer
-$footer-border-top: thin solid #f3f3f3;
+$footer-border-top: thin solid $dark-gray;
 $footer-padding: $space-3;
-$footer-color: #7a7a7a;
-$footer-bg-color: #fafafa;
+$footer-color: $mid-gray;
+$footer-bg-color: inherit;
 $footer-font-weight: 300;
 $footer-font-size: .75rem;

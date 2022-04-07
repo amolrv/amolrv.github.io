@@ -7,8 +7,7 @@ baseurl:     ""
 url:         "https://amol.me"
 date_format: "%b %-d, %Y"
 header_pages:
-  - about.md
-  - resume.md
+  # - resume.md
 
 # Google services
 google_verification:
@@ -21,9 +20,9 @@ bing_verification:
 
 # Optional features
 animated:             false
-show_related_posts:   true
+show_related_posts:   false
 show_post_footers:    false
-show_social_icons:    true
+show_social_icons:    false
 enable_mathjax: false
 extended_fonts: false
 enable_anchorjs: false

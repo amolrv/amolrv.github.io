@@ -7,6 +7,8 @@ date: 2021-04-28 00:00:00
 tags: [kotlin]
 ---
 
+This article explain basic difference between Any, Unit and Nothing from kotlin language.
+
 ## Any
 
 `Any` is by default the superclass of all the classes and has 3 functions: `equals`, `hashCode` and `toString`. This is equal to `Object` class in Java.
