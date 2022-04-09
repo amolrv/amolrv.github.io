@@ -8,6 +8,10 @@
 * @link https://github.com/amolrv/amolrv.github.io
 * @license MIT
 */
+:root {
+    --color: #222;
+    --bg-color: white;
+}
 
 @import 'variables';
 
@@ -33,10 +37,9 @@
 @import 'measure';
 @import 'pagination';
 
-
-// @media (prefers-color-scheme: dark) {
-//     body {
-//         color: whitesmoke;
-//         background-color: #222;
-//     }
-// }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: #eee;
+        --bg-color: #222;
+    }
+}
