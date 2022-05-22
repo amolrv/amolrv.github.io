@@ -20,7 +20,7 @@ bing_verification:
 
 # Optional features
 animated:             false
-show_related_posts:   false
+show_related_posts:   true
 show_post_footers:    false
 show_social_icons:    false
 enable_mathjax: false
@@ -87,7 +87,7 @@ text:
     stumbleupon:  'Share on StumbleUpon'
     hackernews:   'Share on Hacker News'
   post:
-    updated:        'Updated'
+    updated:        'updated at'
     minute_read:    'minute read'
     related_posts:  'Related Posts'
   index:

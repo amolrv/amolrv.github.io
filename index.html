@@ -12,6 +12,8 @@ layout: default
         <h3 class="h1 post-title">{{ post.title }}</h3>
       </a>
       <p class="post-meta">
+        <span class="post-meta small">Published by <a href="/about" class="small">Amol</a></span>
+        on 
         {% if site.date_format %}
         {{ post.date | date: site.date_format }}
         {% else %}
