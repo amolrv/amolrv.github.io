@@ -7,7 +7,8 @@ baseurl:     ""
 url:         "https://amol.me"
 date_format: "%b %-d, %Y"
 header_pages:
-  # - resume.md
+  # - about.md
+  - resume.md
 
 # Google services
 google_verification:

@@ -1,14 +1,13 @@
 <header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a>
-      <nav class="site-nav">
-        {% include navigation.html %}
-      </nav>
-      <div class="clearfix"></div>
-      {% if site.show_social_icons %}
-        {% include social_links.html %}
-      {% endif %}
-    </div>
-  </div>
+  <nav class="site-nav">
+    <a href="{{ "/" | relative_url }}" class="site-title">
+      <img src="{{ site.baseurl }}/assets/apple-touch-icon.png" alt="{{ site.title }}" class="avatar1" />
+    </a>
+    {% include navigation.html %}
+  </nav>
+  <div class="clearfix"></div>
+  <!-- This will not work well with social icon. This about other place to put this  -->
+  {% if site.show_social_icons %}
+    {% include social_links.html %}
+  {% endif %}
 </header>

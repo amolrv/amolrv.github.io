@@ -1,6 +1,6 @@
 .site-header {
-  padding-top: $space-1;
-  padding-bottom: $space-2;
+  max-width: $measure-width;
+  margin: auto;
 }
 
 .site-header a {
@@ -16,6 +16,13 @@
 
 .site-nav {
   padding-top: $nav-padding;
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  .site-title {
+    width: 60px;
+    margin-right: 4rem;
+  }
 }
 
 .site-header nav a {
@@ -39,6 +46,7 @@
 
 .site-nav a + a {
   margin-left: $nav-link-padding-x;
+  font-size: .96em;
 }
 
 .site-header a:hover,
@@ -46,14 +54,6 @@
 .posts .post a:hover .post-title,
 .posts .post a:hover .post-summary {
   opacity: 0.88;
-}
-
-.site-header {
-  text-align: center;
-}
-
-.site-header .site-nav {
-  text-align: center;
 }
 
 @media print {

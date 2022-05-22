@@ -12,11 +12,11 @@ layout: default
   <!-- <br/> -->
   
   <h1>{{ page.title }}</h1>
-  <span class="post-meta small">Published by <a href="/about" class="small">Amol</a></span>
-  <span class="post-meta small">on {{ page.date | date: site.date_format }}</span>
+  <span class="post-meta small">Published by <a href="/about" class="small">Amol</a> on {{ page.date | date: site.date_format }}
   {% if page.update_date %}
-    <span class="post-meta small">and {{ site.text.post.updated | default: "updated at" }} <mark>{{ page.update_date | date: site.date_format }}</mark></span><br>
+  and {{ site.text.post.updated | default: "updated at" }} <mark>{{ page.update_date | date: site.date_format }}</mark>
   {% endif %}
+  </span></br>
   <span class="post-meta small">
     <!-- add config -->
   <!-- {% if page.minutes %}
