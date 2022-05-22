@@ -17,13 +17,14 @@ h6 {
   line-height: $heading-line-height;
   margin-top: 1em;
   margin-bottom: .5em;
+  margin: 3rem 0 1.38rem;
 }
 
 p,
 dl,
 ol,
 ul {
-  font-size: $base-font-size;
+  
   margin-top: 0;
   margin-bottom: $space-2;
 }
@@ -59,7 +60,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  font-size: $base-font-size;
+  
   font-style: italic;
   margin-bottom: 0;
 }

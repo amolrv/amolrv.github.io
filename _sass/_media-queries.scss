@@ -1,8 +1,8 @@
-@media screen and (min-width: $viewport-small) {
-  html {
-    font-size: 16px;
-  }
 
+@media screen and (max-width: $viewport-small) {
+  html {
+    font-size: 14px;
+  }
   h1,
   .h1 {
     font-size: $h1;
@@ -41,13 +41,13 @@
 
 @media screen and (min-width: $viewport-medium) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media screen and (min-width: $viewport-large) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -55,5 +55,16 @@
   em img {
     max-width: $measure-width + 14;
     margin-left: -7em;
+  }
+}
+
+:root {
+  --color: #222;
+  --bg-color: #eee;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+      --color: #eee;
+      --bg-color: #222;
   }
 }
