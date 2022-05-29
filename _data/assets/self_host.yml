@@ -47,5 +47,5 @@ clipboard:
 polyfill:
   js: /assets/lib/polyfill-v3-es6/polyfill.min.js
 
-mathjax:
-  js: /assets/lib/mathjax-3.2.0/tex-chtml.js
+# mathjax:
+#   js: /assets/lib/mathjax-3.2.0/tex-chtml.js
