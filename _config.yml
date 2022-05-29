@@ -23,10 +23,10 @@ timezone: Asia/Kolkata
 
 title: Amol Vyawhare                          # the main title
 
-tagline: Software Engineer   # it will display as the sub-title
+tagline: Stories, lessons and notes
 
 description: >-                        # used by seo meta and the atom feed
-  Stories, lessons and notes  for future me.
+  Stories, lessons and notes
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://amol.me"
