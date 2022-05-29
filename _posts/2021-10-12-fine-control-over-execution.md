@@ -168,13 +168,3 @@ To summarize, I would say use following thumb rules to achieve fine controlled c
 3. coroutines are very lightweight, use them more frequently
 4. use `async/await`, `withContext` around appropriate spaces
 5. Break down computation heavy operation into smaller pieces with more suspension points
-
-### Dispatchers
-
-*Coroutine has different kind of dispatchers available as mentioned in the doc*
-
->- `Dispatchers.Default` — is used by all standard builders if no dispatcher or any other ContinuationInterceptor is specified in their context. It uses a common pool of shared background threads. This is an appropriate choice for compute-intensive coroutines that consume CPU resources.
->- `Dispatchers.IO` — uses a shared pool of on-demand created threads and is designed for offloading of IO-intensive blocking operations (like file I/O and blocking socket I/O).
->- `Dispatchers.Unconfined` — starts coroutine execution in the current call-frame until the first suspension, whereupon the coroutine builder function returns. The coroutine will later resume in whatever thread used by the corresponding suspending function, without confining it to any specific thread or pool. **The Unconfined dispatcher should not normally be used in code.**
->- Private thread pools can be created with `newSingleThreadContext` and `newFixedThreadPoolContext`.
->- An arbitrary Executor can be converted to a dispatcher with the `asCoroutineDispatcher` extension function.

@@ -7,7 +7,6 @@ tags: [kotlin,design]
 
 In this article, you'll see how to model value object particularly in kotlin.
 
-
 Imagine we want to improve below model:
 
 ```kotlin
@@ -17,6 +16,7 @@ class Order(id: UUID,..)
 ```
 
 I had 2 use reason for modelling value type
+
 ## Type safety
 
 lots of time I want to distinguish between let's say `customerId` and `orderId`
@@ -36,10 +36,10 @@ data class CustomerId(private val value: UUID) {
     fun asUUID(): UUID = value
 }
 ```
+
 Option 1 and 2 are more recommended where as option #3 is example of over modelling.
 > I often have tendency to make props as private by default. but when we're modelling immutable data type.
 You don't need to mark props as private.
-
 
 ## Represent a domain concept with constraint
 
