@@ -1,11 +1,12 @@
 ---
 categories: [blog]
-permalink: fine-control-over-execution
 title: Fine control over execution in kotlin
-layout: post
 date: 2021-10-12 10:00:00
 tags: [kotlin, coroutine]
-image: /assets/blog/2021-10-12-fine-control-over-execution.jpg
+image:
+  path: /assets/blog/2021-10-12-fine-control-over-execution.jpg
+  width: 800
+  height: 500
 ---
 Programing language that supports concurrency and parallelism needs to provide cancellation mechanism as well. Well thought cancellation mechanism also gives space to clean up resources.
 

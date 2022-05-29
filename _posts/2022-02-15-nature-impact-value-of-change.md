@@ -1,12 +1,13 @@
 ---
 categories: [blog]
-permalink: nature-impact-value-of-change
 title: Nature, Impact and Value of Change
-layout: post
 date: 2022-02-15 10:00:00
-update_date: 2022-05-22
 tags: [change, development, lesson]
-image: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
+image:
+  path: assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
+  width: 800
+  height: 500
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
 In this article, I'm sharing lessons and learning about change. How understanding the **nature, impact and value of change** resulted in more clarity and confidence and helped me to prepare a release plan.

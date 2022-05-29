@@ -1,8 +1,6 @@
 ---
 categories: [blog]
-permalink: modelling-value-types
 title: Modelling value types in kotlin
-layout: post
 date: 2020-11-04 00:00:00
 tags: [kotlin,design]
 ---

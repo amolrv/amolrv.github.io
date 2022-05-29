@@ -1,8 +1,6 @@
 ---
 categories: [blog]
-permalink: usecases-of-any-unit-nothing
 title: Any, Unit and Nothing
-layout: post
 date: 2021-04-28 00:00:00
 tags: [kotlin]
 ---
