@@ -4,9 +4,10 @@ title: Fine control over execution in kotlin
 date: 2021-10-12 10:00:00
 tags: [kotlin, coroutine]
 image:
+  path: /assets/blog/2021-10-12-fine-control-over-execution.jpg
   src: /assets/blog/2021-10-12-fine-control-over-execution.jpg
-  width: 800
-  height: 500
+  w: 800
+  h: 500
 ---
 Programing language that supports concurrency and parallelism needs to provide cancellation mechanism as well. Well thought cancellation mechanism also gives space to clean up resources.
 
@@ -93,7 +94,7 @@ suspend fun threadBlockingFn(i: Int) = coroutineScope {
 
 fun println(msg: Any) = with(Thread.currentThread()) {
     kotlin.io.println("$id:$name\t=> $msg")
-} 
+}
 // what will be the outcome?
 
 // outcome:
@@ -122,7 +123,7 @@ fun main() = runBlocking {
     job.cancelAndJoin()
     println("cancelled successfully")
 }
-// output: 
+// output:
 // 1:main	=> printing 0
 // 1:main	=> printing 1
 // 1:main	=> printing 2
@@ -137,10 +138,10 @@ Lets use default dispatcher to delegate `threadBlockFn` execution
 ```kotlin
 fun main() = runBlocking {
     val job = launch {
-        repeat(1_00) { 
-          withContext(Dispatchers.Default) { 
-            threadBlockingFn(it) 
-          } 
+        repeat(1_00) {
+          withContext(Dispatchers.Default) {
+            threadBlockingFn(it)
+          }
         }
         println("job completed")
     }
@@ -148,7 +149,7 @@ fun main() = runBlocking {
     job.cancelAndJoin()
     println("cancelled successfully")
 }
-// output: 
+// output:
 // 14:DefaultDispatcher-worker-1	=> printing 0
 // 14:DefaultDispatcher-worker-1	=> printing 1
 // 14:DefaultDispatcher-worker-1	=> printing 2

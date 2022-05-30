@@ -4,9 +4,10 @@ title: Nature, Impact and Value of Change
 date: 2022-02-15 10:00:00
 tags: [change, lesson]
 image:
+  path: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
   src: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
-  width: 800
-  height: 500
+  w: 800
+  h: 500
 ---
 
 In this article, I'm sharing lessons and learning about change. How understanding the **nature, impact and value of change** resulted in more clarity and confidence and helped me to prepare a release plan.
