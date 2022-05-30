@@ -1,10 +1,10 @@
 ---
-categories: [blog]
+categories: [tech, concurrency]
 title: Fine control over execution in kotlin
 date: 2021-10-12 10:00:00
 tags: [kotlin, coroutine]
 image:
-  path: /assets/blog/2021-10-12-fine-control-over-execution.jpg
+  src: /assets/blog/2021-10-12-fine-control-over-execution.jpg
   width: 800
   height: 500
 ---

@@ -1,5 +1,5 @@
 ---
-categories: [blog]
+categories: [tech, design]
 title: Any, Unit and Nothing
 date: 2021-04-28 00:00:00
 tags: [kotlin]

@@ -1,5 +1,5 @@
 ---
-categories: [blog]
+categories: [tech, tools]
 title: Introduction to Http4k
 date: 2020-01-27 09:52:21
 tags: [http4k, kotlin]
