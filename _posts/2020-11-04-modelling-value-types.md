@@ -1,5 +1,5 @@
 ---
-categories: [tech, design]
+categories: [design, tech]
 title: Modelling value types in kotlin
 date: 2020-11-04 00:00:00
 tags: [kotlin,design]
