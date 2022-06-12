@@ -1,7 +1,7 @@
 ---
-categories: [design, tech]
+categories: [domain modeling]
 title: Any, Unit and Nothing
-date: 2021-04-28 00:00:00
+date: 2021-04-28
 tags: [kotlin]
 ---
 

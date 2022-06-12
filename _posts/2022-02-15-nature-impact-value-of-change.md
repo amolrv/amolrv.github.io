@@ -1,5 +1,5 @@
 ---
-categories: [product, change]
+categories: [product]
 title: Nature, Impact and Value of Change
 date: 2022-02-15 10:00:00
 tags: [change, lesson]
