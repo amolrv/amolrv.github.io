@@ -116,7 +116,8 @@ assets:
     env:          # [development|production]
 
 paginate: 10
-
+pwa: 
+  enabled: true
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
