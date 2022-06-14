@@ -4,7 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-
 Hello!
 
 I'm a software engineer who has been working on commercial projects since 2012.
