@@ -1,8 +1,8 @@
 ---
-categories: [toolkit]
+categories: [Notes]
 title: Introduction to Http4k
 date: 2020-01-27 09:52:21
-tags: [http, kotlin, Functional Programming]
+tags: [toolkit, kotlin, functional programming]
 ---
 
 Couple of weeks ago, I was looking for very simple way to create web server.

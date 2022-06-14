@@ -1,8 +1,8 @@
 ---
-categories: [domain modeling]
+categories: [Notes]
 title: Any, Unit and Nothing
 date: 2021-04-28
-tags: [kotlin]
+tags: [kotlin, domain modeling]
 ---
 
 This article explain basic difference between Any, Unit and Nothing from kotlin language.

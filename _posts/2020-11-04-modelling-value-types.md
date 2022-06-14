@@ -1,8 +1,8 @@
 ---
-categories: [domain modeling]
+categories: [Notes]
 title: Modelling value types in kotlin
 date: 2020-11-04 00:00:00
-tags: [kotlin]
+tags: [kotlin, domain modeling]
 ---
 
 In this article, you'll see how to model value object particularly in kotlin.

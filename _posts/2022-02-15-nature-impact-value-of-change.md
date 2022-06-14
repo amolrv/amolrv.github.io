@@ -1,8 +1,8 @@
 ---
-categories: [product]
+categories: [Lessons]
 title: Nature, Impact and Value of Change
 date: 2022-02-15 10:00:00
-tags: [change, lesson]
+tags: [product, change]
 image:
   path: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
   src: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg

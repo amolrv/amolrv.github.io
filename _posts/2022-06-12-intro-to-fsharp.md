@@ -1,8 +1,8 @@
 ---
-categories: [fsharp]
+categories: [Stories]
 title: My introduction to fsharp 🤝
 date: 2022-06-12
-tags: [Functional Programming, dotnet]
+tags: [functional programming, dotnet, fsharp]
 ---
 
 I stumbled upon [F#](https://fsharp.org) in around 2017. At that time I was new in [Thoughtworks](https://thoughtworks.com). It was overwhelming experience just by sheer size of learning on day to day basis. I was in the organization where folks out of TW universities has distilled knowledge of person working in software field for 5-6 years. 
@@ -17,7 +17,6 @@ The next step was pair programming. After pair programming [Krunal](https://www.
 
 I said no, what is it?. He was surprised by answer as my most of the code was written in functional style and was heavily based on `IEnumerable/IQueryable` and `Extensions` .
 
-
 ## do you know fsharp?
 
-Fast forward after 10-12 months being in TW, I was having some conversations with [Mushtaq](https://www.linkedin.com/in/mushtaq-ahmed-a0b76b/) and when I talked him about my past experience with [.NET](https://dotnet.microsoft.com/), first thing that he asked was *"do you know fsharp?"*. At that moment I decided to learn [[fsharp]]
+Fast forward after 10-12 months being in TW, I was having some conversations with [Mushtaq](https://www.linkedin.com/in/mushtaq-ahmed-a0b76b/) and when I talked him about my past experience with [.NET](https://dotnet.microsoft.com/), first thing that he asked was *"do you know fsharp?"*. At that moment I decided to learn fsharp

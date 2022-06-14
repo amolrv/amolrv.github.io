@@ -1,8 +1,8 @@
 ---
-categories: [concurrency and parallelism]
+categories: [Notes]
 title: Fine control over execution in kotlin
 date: 2021-10-12 10:00:00
-tags: [kotlin, coroutine]
+tags: [kotlin, concurrency and parallelism]
 image:
   path: /assets/blog/2021-10-12-fine-control-over-execution.jpg
   src: /assets/blog/2021-10-12-fine-control-over-execution.jpg
