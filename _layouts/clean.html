@@ -1,0 +1,36 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+
+{% include lang.html %}
+
+{% include assets-origin.html %}
+
+{% capture prefer_mode %}
+{% if site.theme_mode %}
+data-mode="{{ site.theme_mode }}"
+{% endif %}
+{% endcapture %}
+
+<html lang="{{ site.lang }}" {{ prefer_mode }}>
+
+{% include head.html %}
+
+<body>
+    <div style="margin: 0 auto; max-width: 800px;">
+        <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
+            {{ content }}
+        </div>
+        {% include search-results.html %}
+    </div> <!-- #main-wrapper -->
+
+    {% if page.mermaid %}
+    {% include mermaid.html %}
+    {% endif %}
+</body>
+
+</html>
+
+

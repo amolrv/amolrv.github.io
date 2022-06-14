@@ -1,15 +1,13 @@
 ---
-layout: default
+layout: clean
 title: Resume
 description: Amol Vyawhare, Software Engineer, Berlin
 image: https://avatars.githubusercontent.com/u/14291758?v=4
 ---
 
-# Amol Vyawhare
+# [Amol Vyawhare](/)
 
-Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com
-](mailto:amol.vyawhare@outlook.com
-)
+Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
 ### <i class="fa fa-code"></i> Skills
 
