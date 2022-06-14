@@ -117,7 +117,7 @@ assets:
 
 paginate: 10
 pwa: 
-  enabled: false
+  enabled: true
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:

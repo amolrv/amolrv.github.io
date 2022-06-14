@@ -76,3 +76,7 @@ post:
 categories:
   category_measure: categories
   post_measure: posts
+
+notification:
+   update_found: A new version of content is available.
+   update: Update
