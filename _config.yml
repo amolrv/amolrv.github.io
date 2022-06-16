@@ -21,7 +21,7 @@ timezone: Asia/Kolkata
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Amol Vyawhare                          # the main title
+title: Amol                          # the main title
 
 tagline: Stories, lessons and notes
 
@@ -116,7 +116,7 @@ assets:
     env:          # [development|production]
 
 paginate: 10
-pwa: 
+pwa:
   enabled: true
 # ------------ The following options are not recommended to be modified ------------------
 
