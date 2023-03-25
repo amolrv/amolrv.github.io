@@ -1,43 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
 {
-	"name": "Jekyll (Community)",
+	"name": "Jekyll",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/jekyll:0-bullseye"
 	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"NODE_VERSION": "lts/*"
-		}	
+		"dockerfile": "Dockerfile"
 	},
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "bash",
-				"icon": "terminal-bash"
-			},
-			"zsh": {
-				"path": "zsh"
-			}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
 		}
 	},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"vscode-icons-team.vscode-icons",
-		"streetsidesoftware.code-spell-checker",
-		"eamodio.gitlens",
-		"davidanson.vscode-markdownlint",
-		"yzhang.markdown-all-in-one",
-		"christian-kohler.path-intellisense",
-		"redhat.vscode-xml"
-	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [4000],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
+	// "forwardPorts": [],
+	// Uncomment the next line to run commands after the container is created.
 	"postCreateCommand": "bundle install",
-
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
-
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"vscode-icons-team.vscode-icons",
+				"streetsidesoftware.code-spell-checker",
+				"eamodio.gitlens",
+				"davidanson.vscode-markdownlint",
+				"yzhang.markdown-all-in-one",
+				"christian-kohler.path-intellisense",
+				"redhat.vscode-xml"
+			]
+		}
+	}
 }
