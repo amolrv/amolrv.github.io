@@ -14,5 +14,5 @@ These days I'm focused on product design and building leadership skills at [Lay
 If you want to talk about software or ask a question, don't hesitate to reach out on [twitter](https://twitter.com/amol_vyawhare).
 I'm learning a lot from the smart and kind people around the world. I'd be glad to help out someone as well.
 
-> In case if you want to hire me reach out me on [linkedin](https://linkedin.com/in/amol){:target="_blank"} or check out my [resume](https://amol.me/resume).
+> In case if you want to hire me reach out me on [linkedin](https://linkedin.com/in/amol){:target="_blank"} or check out my [resume](https://amolrv.github.io/resume).
 {: .prompt-tip }
