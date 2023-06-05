@@ -22,7 +22,7 @@ search:
   js: /assets/lib/simple-jekyll-search-1.10.0/simple-jekyll-search.min.js
 
 mermaid:
-  js: /assets/lib/mermaid-9.1.1/mermaid.min.js
+  js: /assets/lib/10.2.2/dist/mermaid.min.js
 
 dayjs:
   js:
