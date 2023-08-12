@@ -5,7 +5,7 @@ date: 2023-08-12
 tags: [👍rules]
 ---
 
-Often when you're working on large code base, we don't remember how particular code block (function or method or class) is implemented. However signature is suggested by IDE. When you call a code block, sometimes it can throws nasty surprises at you. This can be avoided by writing clear and honest code blocks.
+When working with a huge code base, it's common to forget how a specific code block (function, method, or class) is implemented. However, the IDE suggests using a signature. Sometimes calling a code block can come with unpleasant shocks. By creating honest and clear code blocks, this can be prevented.
 
 For example:
 
