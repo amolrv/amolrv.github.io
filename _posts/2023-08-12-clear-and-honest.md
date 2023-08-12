@@ -33,5 +33,6 @@ These 2 signatures appear quite straightforward, yet they use 2 different techni
 - The first signature prevents entry into an incorrect state by forbidding negative input.
 - While allowing erroneous input, the second signature communicates output more precisely. It informs the caller that it may provide an error or credit to their account.
 
-Other helpful technics
+References
 1. Treat Type as set Read [here](https://blog.ploeh.dk/2021/11/15/types-as-sets/) and [here](https://guide.elm-lang.org/appendix/types_as_sets.html)
+2. [Algebraic data type](https://en.wikipedia.org/wiki/Algebraic_data_type)
