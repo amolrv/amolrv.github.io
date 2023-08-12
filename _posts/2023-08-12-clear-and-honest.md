@@ -18,8 +18,8 @@ fun credit(account: Account, amount : BigDecimal): Account {
 ```
 
 By looking at the signature, caller simply does't know that it's going to blow up. This kind of code blocks affect engineer in 2 ways
-1. Increase cognitive overload of reading and understanding each branch of the code block before calling it
-2. hampers trust of code block.
+1. Increases cognitive overload as caller has to read and understand the code block before using it.
+2. hampers the trust.
 
 Honest signature could have been something like
 ```kotlin
