@@ -1,5 +1,5 @@
 ---
-categories: [Notes]
+categories: [Programming]
 title: Fine control over execution in kotlin
 date: 2021-10-12 10:00:00
 tags: [kotlin, concurrency and parallelism]

@@ -1,5 +1,5 @@
 ---
-categories: [Notes, Programming]
+categories: [Programming]
 title: Analogy with Lego
 date: 2022-07-26
 tags: [👍rules]

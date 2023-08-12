@@ -1,5 +1,5 @@
 ---
-categories: [Notes]
+categories: [Programming]
 title: Any, Unit and Nothing
 date: 2021-04-28
 tags: [kotlin, domain modeling]

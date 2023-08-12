@@ -3,7 +3,6 @@ categories: [Programming]
 title: Code that changes together, stays together
 date: 2022-08-02
 tags: [Architecture, 👍rules]
-pin: true
 ---
 
 In traditional clean/layered/onion architecture code is organized in layers and so as the abstractions such as controllers, services, repositories.
