@@ -64,8 +64,8 @@ But we have 3 options here:
     - constructor is not honest enough because it can blew on your face
     - it can hijack your program’s execution
 2. don't use kotlin since well-known design flaw [^3] 😅
-3. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----)
-    There is really nice article about NoCopy [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565)
+3. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="_blank"}
+    There is really nice article about NoCopy [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="_blank"}
 
 ## Summary
 

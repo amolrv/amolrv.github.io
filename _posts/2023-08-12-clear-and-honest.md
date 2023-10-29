@@ -34,5 +34,5 @@ These 2 signatures appear quite straightforward, yet they use 2 different techni
 - While allowing erroneous input, the second signature communicates output more precisely. It informs the caller that it may provide an error or credit to their account.
 
 References
-1. Treat Type as set Read [here](https://blog.ploeh.dk/2021/11/15/types-as-sets/) and [here](https://guide.elm-lang.org/appendix/types_as_sets.html)
-2. [Algebraic data type](https://en.wikipedia.org/wiki/Algebraic_data_type)
+1. Treat Type as set Read [here](https://blog.ploeh.dk/2021/11/15/types-as-sets/){:target="_blank"} and [here](https://guide.elm-lang.org/appendix/types_as_sets.html){:target="_blank"}
+2. [Algebraic data type](https://en.wikipedia.org/wiki/Algebraic_data_type){:target="_blank"}

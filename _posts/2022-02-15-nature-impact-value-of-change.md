@@ -20,7 +20,7 @@ Like my other colleagues, I also have been part of such *Taskforce* a couple of 
 
 ### What is a Taskforce? 🤔
 
-At [layer](https://golayer.io/about/), we form a triplet of *Tech, Product and Business* to refine features. Mostly one person from each area. Sometimes Product owner represents business expertise or acts as a proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such a triplet *Taskforce*.
+At [layer](https://golayer.io/about/){:target="_blank"}, we form a triplet of *Tech, Product and Business* to refine features. Mostly one person from each area. Sometimes Product owner represents business expertise or acts as a proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such a triplet *Taskforce*.
 
 The task force has the following responsibility 💪
 

@@ -197,8 +197,5 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-plugins:
-  - jekyll-target-blank
-
 target-blank:
     css_class: ext-link

@@ -15,5 +15,3 @@ So when I apply same things for programming, 2 things happens
 
 1. I creates lot of small pieces that can't be broken down  into smaller anymore
 2. I get enormous flexibility of building new things out it.
-
-See [[Creating lego blocks]]

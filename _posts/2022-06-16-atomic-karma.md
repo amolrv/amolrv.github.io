@@ -25,9 +25,9 @@ Let me list down some of these dimensions for me.
 - Financial
 - Risk
 - Joy
-	- Blissful
-	- Playful
-	- fulfilment
+  - Blissful
+  - Playful
+  - fulfilment
 
 Let me share my story about media consumption. I was spending hours and hours on it. After consuming media, I was left with less time, less energy and less attention to all other things that were important to me. It was not adding up on my dimensions.
 

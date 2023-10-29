@@ -6,7 +6,7 @@ tags: [toolkit, kotlin, functional programming]
 ---
 
 Couple of weeks ago, I was looking for very simple way to create web server.
-I found [http4k] which is a lightweight but fully-featured HTTP toolkit
+I found [http4k]{:target="_blank"} which is a lightweight but fully-featured HTTP toolkit
 written in pure Kotlin that enables the serving and consuming of HTTP services
 in a functional and consistent way.
 
@@ -85,6 +85,6 @@ API from http4 are written very thoughtfully and are not opinionated.
 They are easy to reason and work with.
 Only downside can be no support for coroutine.
 
-To know more about http4k rationale visit [http4k/rationale](https://www.http4k.org/rationale/)
+To know more about http4k rationale visit [http4k/rationale](https://www.http4k.org/rationale/){:target="_blank"}
 
 [http4k]: https://www.http4k.org/
