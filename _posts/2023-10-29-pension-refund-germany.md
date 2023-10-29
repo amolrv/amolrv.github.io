@@ -31,4 +31,4 @@ Keep int mind that this is just rough formula. Other factors can affect such as 
 2. Include copies of required document (mentioned in the form and based on you're case).
 3. Send it to german pension office [connected to the city](https://www.deutsche-rentenversicherung.de/DRV/DE/Beratung-und-Kontakt/Kontakt/Anschriften-Uebersicht/anschriften_uebersicht_detail.html) you lived either via post with tracking number or via [de-email](https://www.deutsche-rentenversicherung.de/DRV/DE/Online-Services/de-mail/elektronische-kommunikation-mit-de-mail_node.html#_5f4xp9b93){:target="_blank"} or via email.
 
-Latest information can be found [here](https://www.deutsche-rentenversicherung.de/SharedDocs/Formulare/DE/Formularpakete/01_versicherte/01_vor_der_rente/_DRV_Paket_Versicherung_Erstattung_von_Beiträgen.html"){:target="_blank"}
+Latest information can be found [here](https://www.deutsche-rentenversicherung.de/SharedDocs/Formulare/DE/Formularpakete/01_versicherte/01_vor_der_rente/_DRV_Paket_Versicherung_Erstattung_von_Beiträgen.html){:target="_blank"}
