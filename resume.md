@@ -23,7 +23,13 @@ Berlin, Germany \| +49 1514 1369 131 \| [amol.vyawhare@outlook.com](mailto:amol.
 
 ### <i class="fa fa-tools"></i> Experience
 
-### <i class="fa fa-code-branch"></i> Oct 2020 – present @Layer, Berlin
+### <i class="fa fa-code-branch"></i> Apr 2023 – present @Quantcast, Berlin
+
+- Designed and launched micro services E2E with the help of team of 5.
+
+Tech stack: `kotlin`, `gcp`,`java`, `postgres`, `docker`
+
+### <i class="fa fa-code-branch"></i> Oct 2020 – Apr 2023 @Layer, Berlin
 
 - #### Building github for spreadsheets
 
