@@ -5,7 +5,7 @@ description: Amol Vyawhare, Software Engineer, Berlin
 image: https://avatars.githubusercontent.com/u/14291758?v=4
 ---
 
-## [Amol Vyawhare](https://amolrv.github.io)
+## [Amol Vyawhare][home]
 
 Pune, India \| +91 95456 02040 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
@@ -96,3 +96,6 @@ Tech stack: `kotlin`, `gcp`,`java`, `postgres`, `docker`
 ### <i class="fa fa-graduation-cap"></i> Education
 
 - Bachelor of Engineering – Information Technology \| 2007 – 2011 \| Pune
+
+
+[def]: /
