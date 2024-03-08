@@ -3,16 +3,15 @@ title: Amol Vyawhare
 icon: fas fa-info-circle
 order: 4
 ---
-
 Hello!
 
-I'm a software engineer who has been working on commercial projects since 2012.
-Along the way I have been very lucky to learn from outstanding people and work with them on the exciting projects.
+For over 11 years, I've been passionately creating and delivering software systems, working on projects/products using a variety of technologies ranging from basic standalone apps to majestic monoliths and highly scalable micro-services.
 
-These days I'm focused on product design and building leadership skills at [Layer](https://golayer.io/).
+I enjoy working on complicated systems, improving their designs, empowering users, and providing strong technical leadership to a team.
 
-If you want to talk about software or ask a question, don't hesitate to reach out on [twitter](https://twitter.com/amol_vyawhare).
-I'm learning a lot from the smart and kind people around the world. I'd be glad to help out someone as well.
+When working on a project, I'm primarily concerned with direction, performance, quality, extensibility, maintainability, simplicity, and usability.
 
-> In case if you want to hire me reach out me on [linkedin](https://linkedin.com/in/amol){:target="_blank"} or check out my [resume](https://amolrv.github.io/resume).
+As a Freelance Software Engineer based in Pune, ***I am open to remote or hybrid work***.
+
+> In case if you want to hire me reach out me on [linkedin](https://linkedin.com/in/amol){:target="_blank"} or check out my [resume](/resume).
 {: .prompt-tip }
