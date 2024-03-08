@@ -5,7 +5,7 @@ description: Amol Vyawhare, Software Engineer, Berlin
 image: https://avatars.githubusercontent.com/u/14291758?v=4
 ---
 
-## [Amol Vyawhare][https://amolrv.github.io/resume]
+## [Amol Vyawhare](https://amolrv.github.io)
 
 Pune, India \| +91 95456 02040 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
@@ -23,7 +23,7 @@ Strong consulting expert with extensive experience and an Engineering degree in 
 
 ### <i class="fa fa-tools"></i> Experience
 
-#### <i class="fa fa-code-branch"></i> Apr 2023 – present @Quantcast, Berlin
+#### <i class="fa fa-code-branch"></i> Apr 2023 – Feb 2024 @Quantcast, Berlin
 
 - Designed and lead the solution for ensuring business outcomes.
 - Lead the project with the help of team of 4 engineers
