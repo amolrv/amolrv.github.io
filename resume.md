@@ -98,4 +98,4 @@ Tech stack: `kotlin`, `gcp`,`java`, `postgres`, `docker`
 - Bachelor of Engineering – Information Technology \| 2007 – 2011 \| Pune
 
 
-[def]: /
+[home]: /
