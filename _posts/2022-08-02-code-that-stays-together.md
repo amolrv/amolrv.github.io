@@ -14,24 +14,24 @@ For example
 
 ```yaml
 - src
- - controllers
- - services
- - use case
- - entities
- - repositories
+  - controllers
+  - services
+  - use case
+  - entities
+  - repositories
 ```
 
 In some projects, where I see team wanted to build modular monolith, they started to group based on some heuristic, that these pieces goes together probably we should modularize it.
 
 ```yaml
 - src
- - module#1
+  - module#1
   - controllers
   - services
   - use case
   - entities
   - repositories
- - module#2
+  - module#2
   - controllers
   - services
   - use case
@@ -50,12 +50,12 @@ There was another problem, If I want to make any changes, I have to make changes
 
 Suddenly something clicked
 
-> *"Neurons that fire together wire together" or "Family thats eats together, stays together"*
+> _"Neurons that fire together wire together" or "Family thats eats together, stays together"_
 {: .prompt-info }
 
 which leads to
 
-> ***Code** thats **changes** together, stays together*
+> **\*Code** thats **changes** together, stays together\*
 {: .prompt-tip }
 
 ![vertical slice](/assets/blog/vertical-slice.png)
@@ -81,18 +81,18 @@ Final code structure was similar to 👇🏼
 
 ```yaml
 - src
- - todo
+  - todo
   - api
-   - dto
-   - controller
+  - dto
+  - controller
   - find-todos
   - complete-todo
   - new-todo
   - todo
- - notes
+  - notes
   - api
-   - dto
-   - controller
+  - dto
+  - controller
   - new-notes
   - recent-notes
   - note

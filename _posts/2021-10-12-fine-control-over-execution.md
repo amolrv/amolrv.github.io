@@ -9,7 +9,8 @@ image:
   w: 800
   h: 500
 ---
-Programing language that supports concurrency and parallelism needs to provide cancellation mechanism as well. Well thought cancellation mechanism also gives space to clean up resources.
+Programming language that supports concurrency and parallelism needs to provide cancellation mechanism as well.
+Well thought cancellation mechanism also gives space to clean up resources.
 
 In this blog post we'll take see how to cancel coroutine and impact of suspend functions on it.
 
@@ -98,11 +99,11 @@ fun println(msg: Any) = with(Thread.currentThread()) {
 // what will be the outcome?
 
 // outcome:
-// 1:main	=> printing 0
-// 1:main	=> printing .. 🧐
-// 1:main	=> printing 99 🤔
-// 1:main	=> job completed
-// 1:main	=> cancelled successfully
+// 1:main => printing 0
+// 1:main => printing .. 🧐
+// 1:main => printing 99 🤔
+// 1:main => job completed
+// 1:main => cancelled successfully
 ```
 
 `job` is running on single thread and even we have suspended function `threadBlockingFn` `main` thread does not get unblocked to observe cancellation request. So *how to create suspension point in this case?*
@@ -124,13 +125,13 @@ fun main() = runBlocking {
     println("cancelled successfully")
 }
 // output:
-// 1:main	=> printing 0
-// 1:main	=> printing 1
-// 1:main	=> printing 2
-// 1:main	=> printing 3
-// 1:main	=> printing 4
-// 1:main	=> printing 5
-// 1:main	=> cancelled successfully
+// 1:main => printing 0
+// 1:main => printing 1
+// 1:main => printing 2
+// 1:main => printing 3
+// 1:main => printing 4
+// 1:main => printing 5
+// 1:main => cancelled successfully
 ```
 
 Lets use default dispatcher to delegate `threadBlockFn` execution
@@ -150,18 +151,20 @@ fun main() = runBlocking {
     println("cancelled successfully")
 }
 // output:
-// 14:DefaultDispatcher-worker-1	=> printing 0
-// 14:DefaultDispatcher-worker-1	=> printing 1
-// 14:DefaultDispatcher-worker-1	=> printing 2
-// 14:DefaultDispatcher-worker-1	=> printing 3
-// 14:DefaultDispatcher-worker-1	=> printing 4
-// 14:DefaultDispatcher-worker-1	=> printing 5
-// 1:main	=> cancelled successfully
+// 14:DefaultDispatcher-worker-1 => printing 0
+// 14:DefaultDispatcher-worker-1 => printing 1
+// 14:DefaultDispatcher-worker-1 => printing 2
+// 14:DefaultDispatcher-worker-1 => printing 3
+// 14:DefaultDispatcher-worker-1 => printing 4
+// 14:DefaultDispatcher-worker-1 => printing 5
+// 1:main => cancelled successfully
 ```
 
 ### Summary
 
-Coroutine, dispatcher along with suspended functions provides very powerful mechanism to have full control over execution of code blocks. Default function such as `delay` are cancel aware functions.
+Coroutine, dispatcher along with suspended functions provides very powerful
+ mechanism to have full control over execution of code blocks.
+Default function such as `delay` are cancel aware functions.
 To summarize, I would say use following thumb rules to achieve fine controlled code
 
 1. Have more suspension points in code base

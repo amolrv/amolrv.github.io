@@ -4,8 +4,10 @@ title: Analogy with Lego
 date: 2022-07-26
 tags: [👍rules]
 image:
-  path: https://source.unsplash.com/C0koz3G1I4I/640X428
-  src: https://source.unsplash.com/C0koz3G1I4I/640X428
+  path: /assets/blog/2022-07-26-analogy-with-lego.jpg
+  src: /assets/blog/2022-07-26-analogy-with-lego.jpg
+  w: 640
+  h: 427
 ---
 
 The more I think about programming, the more I see lego. There is reason to that. I usually try to break down things to atomic levels from which it can't be broken down into small things.

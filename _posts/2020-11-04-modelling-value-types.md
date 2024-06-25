@@ -38,8 +38,9 @@ data class CustomerId(private val value: UUID) {
 ```
 
 Option 1 and 2 are more recommended where as option #3 is example of over modelling.
+
 > I often have tendency to make props as private by default. but when we're modelling immutable data type.
-You don't need to mark props as private.
+> You don't need to mark props as private.
 
 ## Represent a domain concept with constraint
 
@@ -51,21 +52,23 @@ But we have 3 options here:
 
 1. Use constructor to throw violations 😟
 
-    ```kotlin
-    data class Email(val value: String) {
-        init {
-            // if (!isValid(value))
-            // then throw InvalidEmail()
-        }
-    }
-    ```
+   ```kotlin
+   data class Email(val value: String) {
+       init {
+           // if (!isValid(value))
+           // then throw InvalidEmail()
+       }
+   }
+   ```
 
-    This option is not bad but it has few limitations and such as
-    - constructor is not honest enough because it can blew on your face
-    - it can hijack your program’s execution
+   This option is not bad but it has few limitations and such as
+
+   - constructor is not honest enough because it can blew on your face
+   - it can hijack your program’s execution
+
 2. don't use kotlin since well-known design flaw [^3] 😅
-3. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="_blank"}
-    There is really nice article about NoCopy [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="_blank"}
+3. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="\_blank"}
+   There is really nice article about NoCopy [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="\_blank"}
 
 ## Summary
 

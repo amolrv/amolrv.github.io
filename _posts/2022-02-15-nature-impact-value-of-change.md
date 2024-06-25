@@ -14,13 +14,13 @@ In this article, I'm sharing lessons and learning about change. How understandin
 
 ## Situation 🤺
 
-Like my other colleagues, I also have been part of such *Taskforce* a couple of times. But recently in my task force, it was becoming very hard to come up with a proper release plan. We're struggling to make a release plan which can be delivered *incrementally* and *iteratively*.
+Like my other colleagues, I also have been part of such _Taskforce_ a couple of times. But recently in my task force, it was becoming very hard to come up with a proper release plan. We're struggling to make a release plan which can be delivered _incrementally_ and _iteratively_.
 
 ## Background 📜
 
 ### What is a Taskforce? 🤔
 
-At [layer](https://golayer.io/about/){:target="_blank"}, we form a triplet of *Tech, Product and Business* to refine features. Mostly one person from each area. Sometimes Product owner represents business expertise or acts as a proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such a triplet *Taskforce*.
+At [layer](https://golayer.io/about/){:target="\_blank"}, we form a triplet of _Tech, Product and Business_ to refine features. Mostly one person from each area. Sometimes Product owner represents business expertise or acts as a proxy for business. For each epic people rotates from each area. This helps to create opportunities to learn, grow and avoid biases in the company. We called such a triplet _Taskforce_.
 
 The task force has the following responsibility 💪
 

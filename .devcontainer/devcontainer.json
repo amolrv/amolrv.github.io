@@ -28,7 +28,8 @@
 				"davidanson.vscode-markdownlint",
 				"yzhang.markdown-all-in-one",
 				"christian-kohler.path-intellisense",
-				"redhat.vscode-xml"
+				"redhat.vscode-xml",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}

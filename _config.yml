@@ -57,7 +57,7 @@ google_site_verification:               # fill in to your verification string
 
 google_analytics:
   id: G-4N3K5D4JRJ                 # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
+  # Google Analytics page views report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
     cache_path:       # the local PV cache data, friendly to visitors from GFW region
