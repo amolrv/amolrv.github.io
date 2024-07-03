@@ -9,83 +9,58 @@ image: https://avatars.githubusercontent.com/u/14291758?v=4
 
 Pune, India \| +91 95456 02040 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
-Experienced Solution Consultant with a proven track record of working in information technology and services.
+Engineering Lead \| Product Engineer \| Solution Architect \| Seasoned Software Engineer \| Polyglot programmer
 
 ### <i class="fa fa-code"></i> Skills
 
-- **Backend** – `asp.net`, `spring`, `kotlin`, `java`, `c#`, `f#`
+- **Backend** – `asp.net`, `spring`,`kotlin`, `java`, `c#`, `f#`, `nodejs`, `typescript`
 - **Frontend** – `react.js`, `angular` and `web component`
 - **Databases** – `postgres`, `mssql`, `mysql` and `mongo`
-- **Technologies** – `event store`, `elastic search`, `kafka`, `AWS`,`GCP`
+- **Technologies** – `event store`, `elastic search`, `kafka`, `AWS`,`GCP`,`kafka`
 - **Well Versed With** – `solution architecture`, `micro services`, `api first design`, `DDD`, `event sourcing`
 
 Strong consulting expert with extensive experience and an Engineering degree in Information Technology from Pune University.
 
 ### <i class="fa fa-tools"></i> Experience
 
+#### <i class="fa fa-code-branch"></i> Apr 2024 – now @MettaRev, Pune
+
+- **Banking** - Building product to enable and empower urban and rural credit societies using [India Stack](https://indiastack.org)
+- **Tech stack** - `nodejs`, `express.js`, `angular`, `typescript`, `postgres`,`AWS`
+
 #### <i class="fa fa-code-branch"></i> Apr 2023 – Feb 2024 @Quantcast, Berlin
 
-- Designed and lead the solution for ensuring business outcomes.
-- Lead the project with the help of team of 4 engineers
-
-Tech stack: `kotlin`, `gcp`,`java`, `postgres`, `docker`
+- **Advertisement** - Designed, lead and build a solution to meet ensure business objectives are met.
+- **Tech stack**: `kotlin`, `gcp`,`java`, `postgres`, `docker`
 
 #### <i class="fa fa-code-branch"></i> Oct 2020 – Apr 2023 @Layer, Berlin
 
-- ##### Building github for spreadsheets
-
-  - Collaborate closely with product team and tech team
-  - Lead the architectural design and technical landscape
-  - develop proof of concepts/pilots
-  - Lead the tech team
-  - Foster feedback culture and alignment
-
-Tech stack: `kotlin`, `gcp`, `typescript`, `postgres`, `docker`
+- **FP&A** - Lead engineering team to build MVP
+- **Tech stack**: `kotlin`, `gcp`, `typescript`, `postgres`, `docker`
 
 #### <i class="fa fa-code-branch"></i> Apr 2019 – Oct 2020 @N26, Berlin
 
-- ##### Core banking
-
-  - Designed, developed very high performance, scalable and compliant service to handle SEPA transactions.
-  - contributed in solution design and delivery.
-
-Tech stack: `kotlin`, `amazon sqs`, `postgres`, `docker`
+- **Core banking** - Designed, developed very high performance, scalable and compliant service to handle SEPA transactions.
+- **Tech stack**: `kotlin`, `amazon sqs`, `postgres`, `docker`
 
 #### <i class="fa fa-code-branch"></i> Aug 2015 – Apr 2019 @ThoughtWorks, Pune
 
-- ##### Messaging platform
+- **Messaging platform** - Build secure platform on top of `kafka` to share data across different regions of the world for a bank. Implemented inter cluster replication when `kafka` wasn't supporting it out of the box.
+- **Tech stack**: `java`, `confluent kafka`, `AWS`
 
-  Secure platform for messaging across different regions of the world for bank. The platform is implemented using confluent Kafka. The main challenge was inter-cluster replication of selected messages and fail over handling.
+- **Online Database for Alternative Assets** - Build a scalable and fast platform to handle large data sets and build web app on top of that as SAAS application.
+- **Tech stack**: `react`, `c# - asp.net core`, `elastic search`, `mongo db`, `event store`
 
-  - contributed significantly in solution design and delivery.
+- **Banking platform** - build platform services using `DDD`, `CQRS` and `event sourcing`.
+- **Tech stack**: `java`, `spring-boot`, `active-mq`, `chef`, `oracle db`
 
-Tech stack: `java`, `confluent kafka`
-
-- ##### Online database for alternative assets
-
-  Platform to handle large amount of data and yet searchable as fast as google. The client has legacy application which was very slow and outdated. So main goal of the projects was to achieve fast and scalable platform which can provide smooth experience with web app. Contributed as full stack developer.
-
-Tech stack: `react`, `c# - asp.net core`, `elastic search`, `mongo db`, `event store`
-
-- ##### Consumer loan Application for leading US bank
-
-  Platform for consumer lending which integrates with various third-party services/applications. The platform was implemented with DDD principles, CQRS and event sourcing.
-
-Tech stack: `java`, `spring-boot`, `active-mq`, `chef`, `oracle db`
-
-- ##### Personal loan - web portal
-
-  Web portal for personal loan for one of the leading Bank. The portal is designed to support different languages. Contributed in rapid building of front end. Main challenge was designing reusable but customizable components.
-
-  Tech stack: `angular`, `java` `spring-boot`, `redis`
+- **Personal loan - web portal** - Contributed in rapid building of front end. Main challenge was designing reusable but customizable components.
+- **Tech stack**: `angular`, `java` `spring-boot`, `redis`
 
 #### <i class="fa fa-code-branch"></i> May 2014 – Aug 2015 @Persistent Systems, Pune
 
-- ##### Loyalty based web application for promotion of sales
-
-  This was web application mainly used for increasing sales using promotions. Contributed as front-end developer and was responsible for promotion module.
-
-Tech stack: `asp.net core`, `ms-sql`, `angular`
+- **Gamified Sales Portal** - Contributed as lead front-end developer for promotion module.
+- **Tech stack**: `asp.net core`, `ms-sql`, `angular`
 
 #### <i class="fa fa-code-branch"></i> Nov 2012 - May 2014 @Vatsa, Pune
 
