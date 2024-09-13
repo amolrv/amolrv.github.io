@@ -5,8 +5,6 @@ date: 2024-09-13
 tags: [firestore]
 ---
 
-# Navigating the Complexities of Firestore Aggregation: A Pragmatic Approach
-
 As a seasoned developer, I have encountered numerous challenges when working with large datasets in Firestore. One such challenge is efficiently managing and aggregating data to provide meaningful insights to users. In this article, I will delve into the intricacies of read-time and write-time aggregation, providing real-world examples and code snippets to help you make an informed decision for your application.
 
 ## Read-Time Aggregation: Simplicity and Immediate Results
