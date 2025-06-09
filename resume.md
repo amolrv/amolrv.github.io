@@ -7,7 +7,9 @@ image: https://avatars.githubusercontent.com/u/14291758?v=4
 
 ## [Amol Vyawhare][home]
 
-📍 Pune, India \|📱 +91 95456 02040 \| ✉️ [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
+📍 Pune, India \|
+📱 [+91 95456 02040](tel:+919545602040) \|
+✉️ [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
 ### Professional Summary
 
