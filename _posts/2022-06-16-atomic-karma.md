@@ -4,6 +4,7 @@ title: Atomic karma
 date: 2022-06-16
 tags: [PD🪴, fractal]
 mermaid: true
+published: false
 ---
 
 Recently, I've been on a _quest to find fractal patterns_ in behavior. As part of this journey, I realized that

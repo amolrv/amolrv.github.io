@@ -3,6 +3,7 @@ categories: [Stories]
 title: My introduction to fsharp 🤝
 date: 2022-06-12
 tags: [functional programming, dotnet, fsharp]
+published: false
 ---
 
 I stumbled upon [F#]{:target="_blank"} around 2017.

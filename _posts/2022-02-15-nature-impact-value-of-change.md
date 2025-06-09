@@ -8,6 +8,7 @@ image:
   src: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
   w: 800
   h: 500
+published: false
 ---
 
 In this article, I'm sharing lessons and learnings about change. Understanding the **nature, impact, and value of change** brought more clarity and confidence, and helped me prepare a release plan.
