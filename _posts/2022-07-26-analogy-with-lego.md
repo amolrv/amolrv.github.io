@@ -10,10 +10,10 @@ image:
   h: 427
 ---
 
-The more I think about programming, the more I see lego. There is reason to that. I usually try to break down things to atomic levels from which it can't be broken down into small things.
-In my childhood I used to do same with toy, pull out each piece and then put it back.
+The more I think about programming, the more I see Lego. There is a reason for that. I usually try to break things down to atomic levels, to the point where they can't be broken down any further.
+In my childhood, I used to do the same with toys—pull out each piece and then put it back.
 
-So when I apply same things for programming, 2 things happens
+So when I apply the same approach to programming, two things happen:
 
-1. I creates lot of small pieces that can't be broken down  into smaller anymore
-2. I get enormous flexibility of building new things out it.
+1. I create a lot of small pieces that can't be broken down any further
+2. I get enormous flexibility in building new things out of them

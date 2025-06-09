@@ -5,12 +5,12 @@ date: 2022-08-02
 tags: [Architecture, 👍rules]
 ---
 
-In traditional clean/layered/onion architecture code is organized in layers and so as the abstractions such as controllers, services, repositories.
+In traditional clean/layered/onion architecture, code is organized in layers, and so are the abstractions such as controllers, services, and repositories.
 
 ![Clean Architecture](/assets/blog/clean-architecture.jpeg)
 
-What I have seen most of people do is tried to organize code per layer by structuring code around those layer.
-For example
+What I have seen most people do is try to organize code per layer by structuring code around those layers.
+For example:
 
 ```yaml
 - src
@@ -21,7 +21,7 @@ For example
   - repositories
 ```
 
-In some projects, where I see team wanted to build modular monolith, they started to group based on some heuristic, that these pieces goes together probably we should modularize it.
+In some projects, where I see teams wanting to build a modular monolith, they start to group based on some heuristic, thinking these pieces go together and probably should be modularized.
 
 ```yaml
 - src
@@ -39,45 +39,43 @@ In some projects, where I see team wanted to build modular monolith, they starte
   - repositories
 ```
 
-I consider this way of modularizing code base as premature as it suffers from forcing you to make decision when you the least knowledge about the system. Sometimes this kind of modularizing felt so artificial.
+I consider this way of modularizing the codebase as premature, as it forces you to make decisions when you have the least knowledge about the system. Sometimes, this kind of modularizing feels so artificial.
 
 So I was wondering 🤔
 
-- how we could defer decision of making modularizing `code structure` as much as I can?
-- How can I let `code structure` evolve itself organically?
+- How could we defer the decision of modularizing `code structure` as much as possible?
+- How can I let `code structure` evolve organically?
 
-There was another problem, If I want to make any changes, I have to make changes in upon 4-5 different packages such as controller, services, use case. In lot of cases I felt that it's lot of ceremony and dancing around so many files. There was urge of keeping things together.
+There was another problem: If I wanted to make any changes, I had to make changes in 4-5 different packages such as controller, services, use case. In a lot of cases, I felt that it's a lot of ceremony and dancing around so many files. There was an urge to keep things together.
 
-Suddenly something clicked
+Suddenly something clicked:
 
-> _"Neurons that fire together wire together" or "Family thats eats together, stays together"_
+> _"Neurons that fire together wire together" or "Family that eats together, stays together"_
 {: .prompt-info }
 
 which leads to
 
-> **\*Code** thats **changes** together, stays together\*
+> **Code that changes together, stays together**
 {: .prompt-tip }
 
 ![vertical slice](/assets/blog/vertical-slice.png)
 
-![vertical slice](/assets/blog/vertical-slice-detail.png)
+As I moved code that was changing together closer, two things happened:
 
-As I move code which was changing together closer, 2 things happened
+1. Code that came closer increased coupling between them (on the vertical axis).
+2. Coupling between different slices started to drop.
 
-1. Code thats was coming closer, coupling between them increased(on vertical access).
-2. Coupling between different slices started to drop
+After spending more time with this approach, I learned that code that's shared across slices bubbled up and moved into the core of the feature or is a domain concept—or it's just a cross-cutting concern, which then could move up and find its own place not just in the codebase but also conceptually.
 
-After spending more time with this approach, I learned that code thats shared across slices bubbled up and moved into core of the feature or is a domain concept. or it's just cross cutting concern. which then could moved up and finds it own place not just in code base but also conceptually.
+In summary, this approach provided me with the following flexibilities:
 
-In summary this approach provide me following flexibilities
-
-- [x] Code structure can evolve as organically as with our understanding of the domain concepts.
-- [x] Provide a way be more pragmatic per slice.
-- [x] Provide way of grouping which can scale with growing feature sets.
+- [x] Code structure can evolve as organically as our understanding of the domain concepts.
+- [x] Provides a way to be more pragmatic per slice.
+- [x] Provides a way of grouping that can scale with growing feature sets.
 
 ---
 
-Final code structure was similar to 👇🏼
+The final code structure was similar to 👇🏼
 
 ```yaml
 - src

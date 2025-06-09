@@ -21,17 +21,13 @@ console.log('Number of comments:', snapshot.data().count);
 ### Advantages of Read-Time Aggregation
 
 1. **Simplicity**: Implementing read-time aggregation is straightforward, as it requires minimal setup and can be easily incorporated into existing queries.
-
 2. **Immediate Results**: Read-time aggregation provides users with the most up-to-date data available, reflecting any changes made to the underlying documents.
-
 3. **Lower Initial Setup**: There is no need for additional infrastructure, such as Cloud Functions or transactions, making it easier to get started with aggregation.
 
 ### Limitations of Read-Time Aggregation
 
 1. **Performance Costs**: For large datasets, read-time aggregations can become expensive, as they require reading all matching documents to compute the result. This can lead to increased latency and higher billing based on document reads.
-
 2. **No Real-Time Updates**: Read-time aggregations do not support real-time listeners, meaning that any changes made after the initial query will not be reflected until a new query is executed.
-
 3. **Limited Caching**: These queries do not allow for client-side caching of results, which can lead to redundant reads for frequently accessed data.
 
 ## Write-Time Aggregation: Real-Time Updates and Cost Efficiency
@@ -46,7 +42,6 @@ exports.updateCommentCount = functions.firestore
     .onCreate(async (snapshot, context) => {
         const postId = context.params.postId;
         const postRef = db.collection('posts').doc(postId);
-
         // Increment the comment count
         await postRef.update({ commentCount: admin.firestore.FieldValue.increment(1) });
     });
@@ -55,19 +50,14 @@ exports.updateCommentCount = functions.firestore
 ### Advantages of Write-Time Aggregation
 
 1. **Real-Time Updates**: Write-time aggregation enables applications to listen for changes in aggregated values, providing users with immediate feedback without the need for re-querying the database.
-
 2. **Cost Efficiency for Large Datasets**: For applications that aggregate data from a large number of documents, write-time aggregation can be more cost-effective. By updating a single aggregated value instead of reading multiple documents, significant reductions in read costs can be achieved.
-
 3. **Offline Access**: Aggregated values stored within documents can be accessed offline, enhancing user experience in mobile applications where connectivity may be intermittent.
-
 4. **Custom Logic**: Write-time aggregation allows for the application of more complex calculations and logic during data writes, enabling tailored aggregation strategies that align with specific application needs.
 
 ### Limitations of Write-Time Aggregation
 
 1. **Increased Complexity**: Implementing write-time aggregation requires more initial setup and maintenance, including the development of Cloud Functions or the management of transactions.
-
 2. **Potential Latency**: Although write-time aggregations can provide real-time updates, there may be slight delays in reflecting changes, particularly if complex calculations are involved.
-
 3. **Higher Write Costs**: Frequent updates to aggregated values can result in increased write costs, especially if the aggregation logic is triggered by numerous write operations.
 
 ## Choosing the Right Approach for Your Application

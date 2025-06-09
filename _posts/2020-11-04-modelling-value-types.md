@@ -5,24 +5,21 @@ date: 2020-11-04 00:00:00
 tags: [kotlin, domain modeling]
 ---
 
-In this article, you'll see how to model value object particularly in kotlin.
+In this article, you'll see how to model value objects, particularly in Kotlin.
 
-Imagine we want to improve below model:
+Imagine we want to improve the following model:
 
 ```kotlin
-class Customer(id: UUID, email: String,..)
+class Customer(id: UUID, email: String, ...)
 
-class Order(id: UUID,..)
+class Order(id: UUID, ...)
 ```
 
-I had 2 use reason for modelling value type
+I had two reasons for modeling value types:
 
-## Type safety
+## Type Safety
 
-lots of time I want to distinguish between let's say `customerId` and `orderId`
-so that accidental passing of wrong Id can be avoided.
-the best way is use inline class [^2] concept but be careful
-with it's stability status.
+Many times, I want to distinguish between, let's say, `customerId` and `orderId` so that accidentally passing the wrong ID can be avoided. The best way is to use the inline class [^2] concept, but be careful with its stability status.
 
 ```kotlin
 // option #1
@@ -37,20 +34,20 @@ data class CustomerId(private val value: UUID) {
 }
 ```
 
-Option 1 and 2 are more recommended where as option #3 is example of over modelling.
+Options 1 and 2 are more recommended, whereas option #3 is an example of over-modeling.
 
-> I often have tendency to make props as private by default. but when we're modelling immutable data type.
-> You don't need to mark props as private.
+> I often have a tendency to make properties private by default, but when we're modeling immutable data types,
+> you don't need to mark properties as private.
 
-## Represent a domain concept with constraint
+## Representing a Domain Concept with Constraints
 
-Let's take an example of `email` which need to match some fancy regex.
+Let's take the example of `email`, which needs to match some fancy regex.
 
-This is bit complicated one especially with kotlin because of language design.
+This is a bit more complicated, especially with Kotlin because of language design.
 
-But we have 3 options here:
+But we have three options here:
 
-1. Use constructor to throw violations 😟
+1. Use the constructor to throw violations 😟
 
    ```kotlin
    data class Email(val value: String) {
@@ -61,18 +58,18 @@ But we have 3 options here:
    }
    ```
 
-   This option is not bad but it has few limitations and such as
+   This option is not bad, but it has a few limitations, such as:
 
-   - constructor is not honest enough because it can blew on your face
-   - it can hijack your program’s execution
+   - The constructor is not honest enough because it can blow up unexpectedly.
+   - It can hijack your program’s execution.
 
-2. don't use kotlin since well-known design flaw [^3] 😅
-3. [Use NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="\_blank"}
-   There is really nice article about NoCopy [here](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="\_blank"}
+2. Don't use Kotlin due to a well-known design flaw [^3] 😅
+3. [Use the NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="_blank"}
+   For more details, see the article "Value-based Classes and Error Handling in Kotlin" on Medium: [Value-based Classes and Error Handling in Kotlin](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="_blank"}
 
 ## Summary
 
-Kotlin has few limitations but those can be fixed. Always go for more transparent and honest representation.
+Kotlin has a few limitations, but those can be worked around. Always go for a more transparent and honest representation.
 
 [^1]: <https://martinfowler.com/bliki/ValueObject.html> "Value object"
 [^2]: <https://kotlinlang.org/docs/reference/evolution/components-stability.html#current-stability-of-kotlin-components> "inline class is at Alpha stability level"

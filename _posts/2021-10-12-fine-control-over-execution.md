@@ -9,14 +9,14 @@ image:
   w: 800
   h: 500
 ---
-Programming language that supports concurrency and parallelism needs to provide cancellation mechanism as well.
-Well thought cancellation mechanism also gives space to clean up resources.
+Programming languages that support concurrency and parallelism need to provide a cancellation mechanism as well.
+A well-thought-out cancellation mechanism also gives space to clean up resources.
 
-In this blog post we'll take see how to cancel coroutine and impact of suspend functions on it.
+In this blog post, we'll see how to cancel coroutines and the impact of suspend functions on them.
 
 ## Basics
 
-The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="blank"} interface has a method called [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="blank"}, which allows to cancel the job.
+The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="blank"} interface has a method called [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="blank"}, which allows you to cancel the job.
 
 ```kotlin
 fun main() = runBlocking {
@@ -39,13 +39,13 @@ fun main() = runBlocking {
 // cancelled successfully
 ```
 
-Calling cancel has following effects on job.
+Calling cancel has the following effects on the job:
 
-- ends execution job at first suspension point
-- if job has some children, they are also canceled at first suspension point
-- Once job is canceled, it can not used as a parent for any new coroutines.
+- Ends execution of the job at the first suspension point
+- If the job has children, they are also canceled at the first suspension point
+- Once a job is canceled, it cannot be used as a parent for any new coroutines.
 
-Lets verify our first assumption by replacing `delay` call by `Thread.sleep`
+Let's verify our first assumption by replacing the `delay` call with `Thread.sleep`:
 
 ```kotlin
 fun main() = runBlocking {
@@ -72,13 +72,13 @@ fun main() = runBlocking {
 
 ## Thread blocking code
 
-Once we removed delay function job has no suspension point and hence it continues to work until the end of computation. `Thread.sleep` is thread blocking function
-let's extract repeat code block into suspended function.
+Once we remove the delay function, the job has no suspension point and hence continues to work until the end of computation. `Thread.sleep` is a thread-blocking function.
+Let's extract the repeat code block into a suspended function.
 
 ```kotlin
 fun main() = runBlocking {
     val job = launch {
-        repeat(1_00) {
+        repeat(100) {
           threadBlockingFn(it)
         }
         println("job completed")
@@ -106,9 +106,9 @@ fun println(msg: Any) = with(Thread.currentThread()) {
 // 1:main => cancelled successfully
 ```
 
-`job` is running on single thread and even we have suspended function `threadBlockingFn` `main` thread does not get unblocked to observe cancellation request. So *how to create suspension point in this case?*
+The `job` is running on a single thread, and even though we have a suspended function `threadBlockingFn`, the `main` thread does not get unblocked to observe the cancellation request. So, how do we create a suspension point in this case?
 
-In order to have more fine control, lets create coroutine for every call of `threadBlockFn` and join it back with parent job
+In order to have more fine control, let's create a coroutine for every call of `threadBlockFn` and join it back with the parent job:
 
 ```kotlin
 fun main() = runBlocking {
@@ -116,7 +116,7 @@ fun main() = runBlocking {
         repeat(1_00) {
           launch { threadBlockingFn(it) }.join()
         }
-        // also produces same output
+        // also produces the same output
         // repeat(1_00) { async { threadBlockingFn(it) }.await()   }
         println("job completed")
     }
@@ -134,7 +134,7 @@ fun main() = runBlocking {
 // 1:main => cancelled successfully
 ```
 
-Lets use default dispatcher to delegate `threadBlockFn` execution
+Let's use the default dispatcher to delegate `threadBlockFn` execution:
 
 ```kotlin
 fun main() = runBlocking {
@@ -162,13 +162,12 @@ fun main() = runBlocking {
 
 ### Summary
 
-Coroutine, dispatcher along with suspended functions provides very powerful
- mechanism to have full control over execution of code blocks.
-Default function such as `delay` are cancel aware functions.
-To summarize, I would say use following thumb rules to achieve fine controlled code
+Coroutines, dispatchers, and suspended functions provide a very powerful mechanism to have full control over the execution of code blocks.
+Default functions such as `delay` are cancel-aware functions.
+To summarize, I would suggest the following thumb rules to achieve fine control over code execution:
 
-1. Have more suspension points in code base
-2. Avoid thread blocking code areas
-3. coroutines are very lightweight, use them more frequently
-4. use `async/await`, `withContext` around appropriate spaces
-5. Break down computation heavy operation into smaller pieces with more suspension points
+1. Have more suspension points in your codebase
+2. Avoid thread-blocking code areas
+3. Coroutines are very lightweight; use them more frequently
+4. Use `async/await`, `withContext` in appropriate places
+5. Break down computation-heavy operations into smaller pieces with more suspension points
