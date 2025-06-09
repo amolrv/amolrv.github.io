@@ -1,0 +1,100 @@
+/* Custom styles for resume page */
+.resume-content ul {
+  list-style: none;
+  padding-left: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.resume-content ul li::before {
+  content: "– ";
+  position: absolute;
+  margin-left: -1.2em;
+}
+
+/* Improve spacing and readability */
+.resume-content h3 {
+  margin-top: 1.5em;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.8cm 1.5cm;
+    /* Increased margins for better balance */
+  }
+
+  body {
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    background: none !important;
+    color: #000 !important;
+  }
+
+  /* Hide navigation elements and links styling */
+  nav,
+  .site-title,
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Ensure links are readable in print */
+  a {
+    text-decoration: none !important;
+    color: #000 !important;
+    font-weight: 500 !important;
+  }
+
+  /* Adjust containers for print */
+  #main-wrapper {
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Section adjustments */
+  .resume-content {
+    margin: 0 auto !important;
+  }
+
+  .resume-content h3 {
+    margin-top: 1.2em !important;
+    margin-bottom: 0.6em !important;
+    padding-bottom: 0.2em !important;
+    border-bottom-width: 0.5pt !important;
+  }
+
+  .resume-content ul {
+    margin-bottom: 0.7em !important;
+    margin-top: 0.3em !important;
+  }
+
+  .resume-content ul li {
+    margin-bottom: 0.25em !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Emoji size adjustment for better print quality */
+  .resume-content emoji {
+    font-size: 90% !important;
+  }
+
+  /* Avoid orphaned headings */
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Hide unnecessary elements */
+  #tail-wrapper {
+    display: none !important;
+  }
+}

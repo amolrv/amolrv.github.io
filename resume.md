@@ -7,69 +7,101 @@ image: https://avatars.githubusercontent.com/u/14291758?v=4
 
 ## [Amol Vyawhare][home]
 
-Pune, India \| +91 95456 02040 \| [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
+📍 Pune, India \|📱 +91 95456 02040 \| ✉️ [amol.vyawhare@outlook.com](mailto:amol.vyawhare@outlook.com)
 
-Engineering Lead \| Product Engineer \| Solution Architect \| Seasoned Software Engineer \| Polyglot programmer
+### Professional Summary
 
-### <i class="fa fa-code"></i> Skills
+Technology leader with 12+ years of experience architecting and delivering scalable, cloud-native solutions across fintech, banking, and e-commerce domains. Proven track record in leading high-performing engineering teams, implementing event-driven architectures, and delivering mission-critical systems. Specializes in distributed systems, microservices architecture, and cloud platforms (AWS, GCP).
 
-- **Backend** – `asp.net`, `spring`,`kotlin`, `java`, `c#`, `f#`, `nodejs`, `typescript`
-- **Frontend** – `react.js`, `angular` and `web component`
-- **Databases** – `postgres`, `mssql`, `mysql` and `mongo`
-- **Technologies** – `event store`, `elastic search`, `kafka`, `AWS`,`GCP`,`kafka`
-- **Well Versed With** – `solution architecture`, `micro services`, `api first design`, `DDD`, `event sourcing`
+### 💻 Technical Expertise
 
-Strong consulting expert with extensive experience and an Engineering degree in Information Technology from Pune University.
+#### 👥 Engineering Leadership
 
-### <i class="fa fa-tools"></i> Experience
+- 🏗️ Solution Architecture \| Microservices Design \| Technical Strategy
+- 🎯 Domain-Driven Design \| Event Sourcing \| API-First Design
+- 👥 Team Leadership \| Agile Methodologies \| Technical Mentorship
 
-#### <i class="fa fa-code-branch"></i> Apr 2024 – now @MettaRev, Pune
+#### ⚡ Core Technologies
 
-- **Banking** - Building product to enable and empower urban and rural credit societies using [India Stack](https://indiastack.org)
-- **Tech stack** - `nodejs`, `express.js`, `angular`, `typescript`, `postgres`,`AWS`
+- 💻 **Languages**: `Kotlin`, `Java`, `TypeScript`, `C#`, `F#`, `Node.js`
+- ⚡ **Frameworks**: `Spring Boot`, `ASP.NET Core`, `HTTP4K`, `Express.js`
+- 🎨 **Frontend**: `Angular`, `React.js`, `Web Components`
+- 🔄 **Data & Messaging**: `PostgreSQL`, `MongoDB`, `Kafka`, `Event Store`, `Elasticsearch`
+- ☁️ **Cloud & DevOps**: `AWS`, `GCP`, `Docker`, `Kubernetes`
 
-#### <i class="fa fa-code-branch"></i> Apr 2023 – Feb 2024 @Quantcast, Berlin
+### 💼 Professional Experience
 
-- **Advertisement** - Designed, lead and build a solution to meet ensure business objectives are met.
-- **Tech stack**: `kotlin`, `gcp`,`java`, `postgres`, `docker`
+#### Tech Consultant @ Equal Expert, Pune *(Contract)* | August 2024 – Present
 
-#### <i class="fa fa-code-branch"></i> Oct 2020 – Apr 2023 @Layer, Berlin
+🛍️ Leading post-purchase experience transformation for e-commerce platform
 
-- **FP&A** - Lead engineering team to build MVP
-- **Tech stack**: `kotlin`, `gcp`, `typescript`, `postgres`, `docker`
+- 📈 Driving customer engagement improvements through data-driven decisions
+- 🔧 Building and maintaining scalable microservices using `Kotlin` and `HTTP4K`
+- 🛠️ **Tech Stack**: `Kotlin`, `HTTP4K`, `Node.js`, `Angular`, `Firebase`, `GCP`
 
-#### <i class="fa fa-code-branch"></i> Apr 2019 – Oct 2020 @N26, Berlin
+#### Engineering Lead @ MettaRev, Pune *(Contract)* | Apr 2024 – August 2024
 
-- **Core banking** - Designed, developed very high performance, scalable and compliant service to handle SEPA transactions.
-- **Tech stack**: `kotlin`, `amazon sqs`, `postgres`, `docker`
+🏦 Led development of fintech platform for urban and rural credit societies
 
-#### <i class="fa fa-code-branch"></i> Aug 2015 – Apr 2019 @ThoughtWorks, Pune
+- 🔗 Designed and implemented integration with India Stack for seamless financial services
+- 🔒 Built secure, compliant banking interfaces using `Node.js` and `Express.js`
+- 🛠️ **Tech Stack**: `Node.js`, `Express.js`, `Angular`, `PostgreSQL`, `AWS`
 
-- **Messaging platform** - Build secure platform on top of `kafka` to share data across different regions of the world for a bank. Implemented inter cluster replication when `kafka` wasn't supporting it out of the box.
-- **Tech stack**: `java`, `confluent kafka`, `AWS`
+#### Engineering Lead @ Quantcast, Berlin | Apr 2023 – Feb 2024
 
-- **Online Database for Alternative Assets** - Build a scalable and fast platform to handle large data sets and build web app on top of that as SAAS application.
-- **Tech stack**: `react`, `c# - asp.net core`, `elastic search`, `mongo db`, `event store`
+📊 Led development of high-impact advertising solutions
 
-- **Banking platform** - build platform services using `DDD`, `CQRS` and `event sourcing`.
-- **Tech stack**: `java`, `spring-boot`, `active-mq`, `chef`, `oracle db`
+- ⚡ Architected and implemented promotion performance tracking application in `Kotlin`
+- 🛠️ **Tech Stack**: `Kotlin`, `Java`, `PostgreSQL`, `GCP`, `Docker`
 
-- **Personal loan - web portal** - Contributed in rapid building of front end. Main challenge was designing reusable but customizable components.
-- **Tech stack**: `angular`, `java` `spring-boot`, `redis`
+#### Engineering Lead @ Layer, Berlin | Oct 2020 – Apr 2023
 
-#### <i class="fa fa-code-branch"></i> May 2014 – Aug 2015 @Persistent Systems, Pune
+📈 Led engineering team in building Financial Planning & Analysis (FP&A) platform
 
-- **Gamified Sales Portal** - Contributed as lead front-end developer for promotion module.
-- **Tech stack**: `asp.net core`, `ms-sql`, `angular`
+- 👥 Built and scaled engineering team from 3 to 12 members
+- 🎯 Delivered pivoted solution within 6 months leading to high customer retention and confidence
+- 🛠️ **Tech Stack**: `Kotlin`, `TypeScript`, `PostgreSQL`, `GCP`, `Docker`
 
-#### <i class="fa fa-code-branch"></i> Nov 2012 - May 2014 @Vatsa, Pune
+#### Senior Software Engineer @ N26, Berlin | Apr 2019 – Oct 2020
 
-- Worked on various assignments which involved development of desktop applications and
-  web application in education and health care domain.
-- Used various third-party UI tools to deliver quality.
+💳 Core banking platform development focusing on SEPA transactions
 
-### <i class="fa fa-graduation-cap"></i> Education
+- ⚡ Designed high-performance transaction processing system handling 100K+ daily transactions
+- 🔒 Implemented fault-tolerant architecture with 99.95% uptime
+- 🛠️ **Tech Stack**: `Kotlin`, `Amazon SQS`, `PostgreSQL`, `Docker`
 
-- Bachelor of Engineering – Information Technology \| 2007 – 2011 \| Pune
+#### Senior Consultant @ ThoughtWorks, Pune | Aug 2015 – Apr 2019
+
+🏢 Led multiple projects across banking and financial services
+
+- 🔄 Designed and implemented cross-region messaging platform using `Kafka`
+- 📊 Built scalable SAAS platform for alternative assets management
+- 🎯 Implemented event-sourced banking platform using DDD principles
+
+**Key Projects**:
+
+- 🌐 Global Banking Messaging Platform
+- 💰 Alternative Assets Database Platform
+- 🏦 Digital Banking Services
+
+🛠️ **Tech Stack**: `Java`, `C#`, `React`, `Kafka`, `Event Store`, `MongoDB`, `Elasticsearch`
+
+#### Software Engineer @ Persistent Systems, Pune | May 2014 – Aug 2015
+
+💻 Led frontend development team for enterprise applications
+
+- 🎮 Led frontend development for gamified sales portal
+- 🛠️ **Tech Stack**: `ASP.NET Core`, `MS-SQL`, `Angular`
+
+#### Software Developer @ Vatsa, Pune | Nov 2012 - May 2014
+
+👨‍💻 Developed enterprise solutions for education and healthcare domains
+
+- 🏥 Developed solutions for education and healthcare domains
+- 🛠️ **Tech Stack**: `.NET`, `C#`, `SQL Server`
+
+### 🎓 Education
+
+🎓 Bachelor of Engineering – Information Technology \| 2007 – 2011 \| Pune University
 
 [home]: /
