@@ -31,9 +31,9 @@ data class CustomerId(val value: UUID)
 
 // option #3
 data class CustomerId(private val value: UUID) {
-    override fun toString(): String = value.toString()
-    fun asString(): String = value.toString()
-    fun asUUID(): UUID = value
+  override fun toString(): String = value.toString()
+  fun asString(): String = value.toString()
+  fun asUUID(): UUID = value
 }
 ```
 
@@ -52,10 +52,10 @@ Here are two approaches I've explored, with the second being my recommended solu
 
 ```kotlin
 data class Email(val value: String) {
-    init {
-        // if (!isValid(value))
-        // then throw InvalidEmail()
-    }
+  init {
+    // if (!isValid(value))
+    // then throw InvalidEmail()
+  }
 }
 ```
 
@@ -69,20 +69,20 @@ While this approach works, it has notable drawbacks:
    ```kotlin
    @JvmInline
    value class Email private constructor(val value: String) {
-       companion object {
-           private val emailRegex = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
-           
-           fun create(email: String): Result<Email> =
-               when {
-                   email.isBlank() -> Result.failure(
-                       IllegalArgumentException("Email cannot be blank")
-                   )
-                   !emailRegex.matches(email) -> Result.failure(
-                       IllegalArgumentException("Invalid email format")
-                   )
-                   else -> Result.success(Email(email))
-               }
-       }
+     companion object {
+       private val emailRegex = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+       
+       fun create(email: String): Result<Email> =
+         when {
+           email.isBlank() -> Result.failure(
+             IllegalArgumentException("Email cannot be blank")
+           )
+           !emailRegex.matches(email) -> Result.failure(
+             IllegalArgumentException("Invalid email format")
+           )
+           else -> Result.success(Email(email))
+         }
+     }
    }
    ```
 
@@ -97,12 +97,12 @@ While this approach works, it has notable drawbacks:
 
    ```kotlin
    fun createUser(emailStr: String) {
-       Email.create(emailStr)
-           .map { email -> User(email) }
-           .fold(
-               onSuccess = { user -> saveUser(user) },
-               onFailure = { error -> handleError(error) }
-           )
+     Email.create(emailStr)
+       .map { email -> User(email) }
+       .fold(
+         onSuccess = { user -> saveUser(user) },
+         onFailure = { error -> handleError(error) }
+       )
    }
    ```
 

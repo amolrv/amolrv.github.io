@@ -38,13 +38,13 @@ Here's how you might use a Cloud Function to update a comment counter:
 
 ```javascript
 exports.updateCommentCount = functions.firestore
-    .document('posts/{postId}/comments/{commentId}')
-    .onCreate(async (snapshot, context) => {
-        const postId = context.params.postId;
-        const postRef = db.collection('posts').doc(postId);
-        // Increment the comment count
-        await postRef.update({ commentCount: admin.firestore.FieldValue.increment(1) });
-    });
+  .document('posts/{postId}/comments/{commentId}')
+  .onCreate(async (snapshot, context) => {
+    const postId = context.params.postId;
+    const postRef = db.collection('posts').doc(postId);
+    // Increment the comment count
+    await postRef.update({ commentCount: admin.firestore.FieldValue.increment(1) });
+  });
 ```
 
 ### Benefits of Write-Time Aggregation

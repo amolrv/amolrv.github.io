@@ -28,57 +28,57 @@ The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/
 
 ```kotlin
 class UserRepository(
-    private val api: UserApi,
-    private val database: UserDatabase,
-    private val scope: CoroutineScope
+  private val api: UserApi,
+  private val database: UserDatabase,
+  private val scope: CoroutineScope
 ) {
-    private var syncJob: Job? = null
+  private var syncJob: Job? = null
 
-    fun startSync() {
-        // Cancel any existing sync
-        syncJob?.cancel()
-        
-        syncJob = scope.launch {
-            try {
-                while (true) {
-                    println("Starting sync cycle...")
-                    
-                    val users = withContext(Dispatchers.IO) {
-                        api.fetchUsers() // Suspension point - network call
-                    }
-                    
-                    users.forEach { user ->
-                        // Yield periodically to cooperate with cancellation
-                        yield()
-                        database.updateUser(user)
-                    }
-                    
-                    println("Sync completed")
-                    delay(60_000) // Wait for 1 minute before next sync
-                }
-            } catch (e: CancellationException) {
-                println("Sync was cancelled")
-                throw e
-            } finally {
-                println("Cleaning up sync resources")
-            }
+  fun startSync() {
+    // Cancel any existing sync
+    syncJob?.cancel()
+    
+    syncJob = scope.launch {
+      try {
+        while (true) {
+          println("Starting sync cycle...")
+          
+          val users = withContext(Dispatchers.IO) {
+            api.fetchUsers() // Suspension point - network call
+          }
+          
+          users.forEach { user ->
+            // Yield periodically to cooperate with cancellation
+            yield()
+            database.updateUser(user)
+          }
+          
+          println("Sync completed")
+          delay(60_000) // Wait for 1 minute before next sync
         }
+      } catch (e: CancellationException) {
+        println("Sync was cancelled")
+        throw e
+      } finally {
+        println("Cleaning up sync resources")
+      }
     }
+  }
 
-    fun stopSync() {
-        syncJob?.cancel()
-    }
+  fun stopSync() {
+    syncJob?.cancel()
+  }
 }
 
 // Usage
 fun main() = runBlocking {
-    val repository = UserRepository(mockApi(), mockDatabase(), this)
-    
-    repository.startSync()
-    delay(3000) // Let it sync for 3 seconds
-    
-    repository.stopSync()
-    println("Sync stopped")
+  val repository = UserRepository(mockApi(), mockDatabase(), this)
+  
+  repository.startSync()
+  delay(3000) // Let it sync for 3 seconds
+  
+  repository.stopSync()
+  println("Sync stopped")
 }
 ```
 
@@ -93,45 +93,45 @@ Let's look at a common mistake when dealing with cancellation - blocking operati
 
 ```kotlin
 class ImageProcessor(private val scope: CoroutineScope) {
-    private var processingJob: Job? = null
+  private var processingJob: Job? = null
 
-    fun processImages(images: List<Image>) {
-        processingJob?.cancel()
-        
-        processingJob = scope.launch {
-            try {
-                images.forEach { image ->
-                    println("Processing image: ${image.name}")
-                    
-                    // BAD: This blocks the thread and ignores cancellation
-                    Thread.sleep(100)
-                    image.applyFilter()
-                    
-                    // GOOD: This cooperates with cancellation
-                    // delay(100)
-                    // ensureActive() // Explicit cancellation check
-                    // image.applyFilter()
-                    
-                    println("Image processed: ${image.name}")
-                }
-            } catch (e: CancellationException) {
-                println("Image processing cancelled")
-                throw e
-            }
+  fun processImages(images: List<Image>) {
+    processingJob?.cancel()
+    
+    processingJob = scope.launch {
+      try {
+        images.forEach { image ->
+          println("Processing image: ${image.name}")
+          
+          // BAD: This blocks the thread and ignores cancellation
+          Thread.sleep(100)
+          image.applyFilter()
+          
+          // GOOD: This cooperates with cancellation
+          // delay(100)
+          // ensureActive() // Explicit cancellation check
+          // image.applyFilter()
+          
+          println("Image processed: ${image.name}")
         }
+      } catch (e: CancellationException) {
+        println("Image processing cancelled")
+        throw e
+      }
     }
+  }
 }
 
 // Usage showing the difference
 fun main() = runBlocking {
-    val processor = ImageProcessor(this)
-    val images = List(100) { Image("IMG_$it.jpg") }
-    
-    processor.processImages(images)
-    delay(250) // Let it process a few images
-    
-    processor.processingJob?.cancel()
-    println("Cancellation requested")
+  val processor = ImageProcessor(this)
+  val images = List(100) { Image("IMG_$it.jpg") }
+  
+  processor.processImages(images)
+  delay(250) // Let it process a few images
+  
+  processor.processingJob?.cancel()
+  println("Cancellation requested")
 }
 
 // With Thread.sleep: Continues processing all images
@@ -144,54 +144,54 @@ Here's a real-world example of how to handle long-running operations with proper
 
 ```kotlin
 class FileUploader(
-    private val api: FileApi,
-    private val scope: CoroutineScope
+  private val api: FileApi,
+  private val scope: CoroutineScope
 ) {
-    private val activeUploads = mutableMapOf<String, Job>()
+  private val activeUploads = mutableMapOf<String, Job>()
 
-    fun startUpload(fileId: String, file: File) {
-        // Cancel existing upload if any
-        activeUploads[fileId]?.cancel()
-        
-        activeUploads[fileId] = scope.launch {
-            try {
-                val fileStream = withContext(Dispatchers.IO) {
-                    FileInputStream(file)
-                }
-                
-                fileStream.use { stream ->
-                    val buffer = ByteArray(8192)
-                    var bytesRead: Int
-                    var totalBytes = 0L
-                    
-                    while (stream.read(buffer).also { bytesRead = it } != -1) {
-                        ensureActive() // Check for cancellation
-                        
-                        withContext(Dispatchers.IO) {
-                            api.uploadChunk(fileId, buffer, bytesRead)
-                        }
-                        
-                        totalBytes += bytesRead
-                        println("Uploaded $totalBytes bytes")
-                        
-                        yield() // Cooperate with other coroutines
-                    }
-                }
-                
-                println("Upload completed for $fileId")
-            } catch (e: CancellationException) {
-                println("Upload cancelled for $fileId")
-                throw e
-            } finally {
-                activeUploads.remove(fileId)
-                println("Cleaned up upload resources for $fileId")
-            }
+  fun startUpload(fileId: String, file: File) {
+    // Cancel existing upload if any
+    activeUploads[fileId]?.cancel()
+    
+    activeUploads[fileId] = scope.launch {
+      try {
+        val fileStream = withContext(Dispatchers.IO) {
+          FileInputStream(file)
         }
+        
+        fileStream.use { stream ->
+          val buffer = ByteArray(8192)
+          var bytesRead: Int
+          var totalBytes = 0L
+          
+          while (stream.read(buffer).also { bytesRead = it } != -1) {
+            ensureActive() // Check for cancellation
+            
+            withContext(Dispatchers.IO) {
+              api.uploadChunk(fileId, buffer, bytesRead)
+            }
+            
+            totalBytes += bytesRead
+            println("Uploaded $totalBytes bytes")
+            
+            yield() // Cooperate with other coroutines
+          }
+        }
+        
+        println("Upload completed for $fileId")
+      } catch (e: CancellationException) {
+        println("Upload cancelled for $fileId")
+        throw e
+      } finally {
+        activeUploads.remove(fileId)
+        println("Cleaned up upload resources for $fileId")
+      }
     }
+  }
 
-    fun cancelUpload(fileId: String) {
-        activeUploads[fileId]?.cancel()
-    }
+  fun cancelUpload(fileId: String) {
+    activeUploads[fileId]?.cancel()
+  }
 }
 ```
 

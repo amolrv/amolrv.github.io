@@ -26,7 +26,7 @@ Here's how straightforward it is to create an endpoint that echoes back the requ
 
 ```kotlin
 val app: HttpHandler = {
-    request: Request -> Response(OK).body(request.body)
+  request: Request -> Response(OK).body(request.body)
 }
 val server = app.asServer(SunHttp(8000)).start()
 ```
@@ -45,10 +45,10 @@ Here's a practical example of how to compose HttpHandlers using filters:
 
 ```kotlin
 val setContentType = Filter { nextHandler ->
-        { request -> nextHandler(request)
-            .header("Content-Type", "text/plain")
-        }
+    { request -> nextHandler(request)
+      .header("Content-Type", "text/plain")
     }
+  }
 
 val composedApp = setContentType.then(app)
 ```
@@ -59,11 +59,11 @@ http4k excels at composing applications through its high-level routing functions
 
 ```kotlin
 val app : HttpHandler = routes(
-    "/api" bind GET to apiApp,
-    "/other" bind routes(
-        "/get" bind GET to {_:Request -> Response(OK)},
-        "/post" bind POST to otherPostHandlerFn
-    )
+  "/api" bind GET to apiApp,
+  "/other" bind routes(
+    "/get" bind GET to {_:Request -> Response(OK)},
+    "/post" bind POST to otherPostHandlerFn
+  )
 )
 ```
 
