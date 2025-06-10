@@ -1,0 +1,23 @@
+/* Hide sidebar on iPhone landscape mode */
+@media screen and (max-width: 926px) and (orientation: landscape) {
+  #sidebar {
+    display: none !important;
+  }
+  .container {
+    max-width: 100% !important;
+  }
+  #main-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .main-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #panel-wrapper {
+    display: none !important;
+  }
+}
