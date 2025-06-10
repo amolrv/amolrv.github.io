@@ -5,9 +5,9 @@ date: 2023-08-12
 tags: [👍rules]
 ---
 
-When working with a huge code base, it's common to forget how a specific code block (function, method, or class) is implemented. However, the IDE suggests using a signature. Sometimes, calling a code block can come with unpleasant surprises. By creating honest and clear code blocks, this can be prevented.
+Every software developer has encountered this scenario: you're working in a large codebase, and you need to use a function. The IDE shows you its signature, it looks straightforward, but when you use it, surprises await. This is where the importance of honest and clear code becomes evident.
 
-For example:
+Consider this example:
 
 ```kotlin
 // (account: Account, amount: BigDecimal) -> Account
@@ -17,12 +17,12 @@ fun credit(account: Account, amount: BigDecimal): Account {
 }
 ```
 
-By looking at the signature, the caller simply doesn't know that it's going to throw an error. This kind of code block affects engineers in two ways:
+The function signature appears simple, but it hides a critical detail - it can throw an exception. This lack of transparency creates two significant problems:
 
-1. Increases cognitive overload, as the caller has to read and understand the code block before using it.
-2. Hampers trust.
+1. **Cognitive Overhead**: Developers must dive into the implementation to understand the complete behavior
+2. **Trust Issues**: When signatures don't tell the whole story, developers become wary of using any code without thorough investigation
 
-An honest signature could have been something like:
+Here are two alternative approaches that make the function's behavior explicit:
 
 ```kotlin
 (account: Account, amount: NonNegativeCurrency) -> Account
@@ -30,10 +30,12 @@ An honest signature could have been something like:
 (account: Account, amount: BigDecimal) -> Either<NegativeAmountError, Account>
 ```
 
-These two signatures appear quite straightforward, yet they use two different techniques.
+Both signatures are more honest, but they use different strategies:
 
-- The first signature prevents entry into an incorrect state by forbidding negative input.
-- While allowing erroneous input, the second signature communicates output more precisely. It informs the caller that it may provide an error or credit to their account.
+- The first version uses type constraints to prevent invalid states entirely
+- The second version explicitly communicates possible outcomes through the return type
+
+By making our code's behavior explicit in its signature, we create more maintainable and trustworthy systems.
 
 References
 

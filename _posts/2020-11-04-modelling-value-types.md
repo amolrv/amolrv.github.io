@@ -5,9 +5,9 @@ date: 2020-11-04 00:00:00
 tags: [kotlin, domain modeling]
 ---
 
-In this article, you'll see how to model value objects, particularly in Kotlin.
+In this article, I'll show you how to effectively model value objects in Kotlin, addressing two key challenges I've encountered in domain modeling.
 
-Imagine we want to improve the following model:
+Let's start with a common scenario. Consider this basic model that we want to improve:
 
 ```kotlin
 class Customer(id: UUID, email: String, ...)
@@ -15,17 +15,20 @@ class Customer(id: UUID, email: String, ...)
 class Order(id: UUID, ...)
 ```
 
-I had two reasons for modeling value types:
+I had two main motivations for implementing value types in my codebase:
 
 ## Type Safety
 
-Many times, I want to distinguish between, let's say, `customerId` and `orderId` so that accidentally passing the wrong ID can be avoided. The best way is to use the inline class [^2] concept, but be careful with its stability status.
+One of the most common issues I've faced is the need to distinguish between similar IDs, such as `customerId` and `orderId`. Without proper typing, it's easy to accidentally pass the wrong ID to a function. The most effective solution is to use Kotlin's value class feature (formerly known as inline classes) [^2]. As of Kotlin 1.5+, the `@JvmInline value class` is the stable way to define these types.
 
 ```kotlin
-// option #1
-inline class CustomerId(val value: UUID)
+// option #1 (recommended)
+@JvmInline
+value class CustomerId(val value: UUID)
+
 // option #2
 data class CustomerId(val value: UUID)
+
 // option #3
 data class CustomerId(private val value: UUID) {
     override fun toString(): String = value.toString()
@@ -34,43 +37,77 @@ data class CustomerId(private val value: UUID) {
 }
 ```
 
-Options 1 and 2 are more recommended, whereas option #3 is an example of over-modeling.
+I recommend going with option #1, as it provides the necessary type safety without runtime overhead, since value classes are optimized by the Kotlin compiler. Option #2 is also acceptable for simpler cases, while option #3 demonstrates what I consider over-modeling.
 
-> I often have a tendency to make properties private by default, but when we're modeling immutable data types,
-> you don't need to mark properties as private.
+> While I typically default to making properties private, I've learned that when dealing with immutable data types,
+> this level of encapsulation isn't necessary.
 
 ## Representing a Domain Concept with Constraints
 
-Let's take the example of `email`, which needs to match some fancy regex.
+Let's consider email validation as an example. We want to ensure that an email matches specific validation rules (like a regex pattern). This presents some interesting challenges in Kotlin due to its language design.
 
-This is a bit more complicated, especially with Kotlin because of language design.
+Here are two approaches I've explored, with the second being my recommended solution:
 
-But we have three options here:
+1. Constructor-based validation 😟
 
-1. Use the constructor to throw violations 😟
+```kotlin
+data class Email(val value: String) {
+    init {
+        // if (!isValid(value))
+        // then throw InvalidEmail()
+    }
+}
+```
+
+While this approach works, it has notable drawbacks:
+
+- The constructor isn't transparent about its behavior since it can throw exceptions
+- It can disrupt the normal flow of program execution unexpectedly
+
+1. Functional domain modeling approach 🎯
 
    ```kotlin
-   data class Email(val value: String) {
-       init {
-           // if (!isValid(value))
-           // then throw InvalidEmail()
+   @JvmInline
+   value class Email private constructor(val value: String) {
+       companion object {
+           private val emailRegex = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+           
+           fun create(email: String): Result<Email> =
+               when {
+                   email.isBlank() -> Result.failure(
+                       IllegalArgumentException("Email cannot be blank")
+                   )
+                   !emailRegex.matches(email) -> Result.failure(
+                       IllegalArgumentException("Invalid email format")
+                   )
+                   else -> Result.success(Email(email))
+               }
        }
    }
    ```
 
-   This option is not bad, but it has a few limitations, such as:
+   This approach has several advantages:
+   - Uses Kotlin's `Result` type for explicit error handling
+   - Private constructor prevents invalid instances
+   - Validation rules are centralized in the companion object
+   - No runtime exceptions during normal flow
+   - Can be used in a functional pipeline
 
-   - The constructor is not honest enough because it can blow up unexpectedly.
-   - It can hijack your program’s execution.
+   Usage example:
 
-2. Don't use Kotlin due to a well-known design flaw [^3] 😅
-3. [Use the NoCopy plugin 🎯](https://github.com/AhmedMourad0/no-copy#nocopy-compiler-plugin----){:target="_blank"}
-   For more details, see the article "Value-based Classes and Error Handling in Kotlin" on Medium: [Value-based Classes and Error Handling in Kotlin](https://medium.com/swlh/value-based-classes-and-error-handling-in-kotlin-3f14727c0565){:target="_blank"}
+   ```kotlin
+   fun createUser(emailStr: String) {
+       Email.create(emailStr)
+           .map { email -> User(email) }
+           .fold(
+               onSuccess = { user -> saveUser(user) },
+               onFailure = { error -> handleError(error) }
+           )
+   }
+   ```
 
 ## Summary
 
-Kotlin has a few limitations, but those can be worked around. Always go for a more transparent and honest representation.
+While Kotlin has made significant improvements in modeling value types with the stable `value class` feature, some challenges remain when dealing with validation and constraints. From my experience, the key is to prioritize transparency and honesty in your domain model representation. The functional approach to domain modeling provides a clean, type-safe way to handle these challenges while maintaining clear boundaries and explicit error handling.
 
-[^1]: <https://martinfowler.com/bliki/ValueObject.html> "Value object"
-[^2]: <https://kotlinlang.org/docs/reference/evolution/components-stability.html#current-stability-of-kotlin-components> "inline class is at Alpha stability level"
-[^3]: <https://youtrack.jetbrains.com/issue/KT-11914> "Confusing data class copy with private constructor"
+[^2]: <https://kotlinlang.org/docs/inline-classes.html> "Kotlin value classes documentation"

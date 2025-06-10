@@ -5,12 +5,11 @@ date: 2022-08-02
 tags: [Architecture, 👍rules]
 ---
 
-In traditional clean/layered/onion architecture, code is organized in layers, and so are the abstractions such as controllers, services, and repositories.
+Most of us are familiar with clean/layered/onion architecture - the tried and tested approach where code is organized in distinct layers with clear abstractions like controllers, services, and repositories.
 
 ![Clean Architecture](/assets/blog/clean-architecture.jpeg)
 
-What I have seen most people do is try to organize code per layer by structuring code around those layers.
-For example:
+When implementing this architecture, I've noticed a common pattern: teams tend to organize their codebase strictly by these technical layers. You'll typically see something like this:
 
 ```yaml
 - src
@@ -21,77 +20,75 @@ For example:
   - repositories
 ```
 
-In some projects, where I see teams wanting to build a modular monolith, they start to group based on some heuristic, thinking these pieces go together and probably should be modularized.
+Then, as projects grow and teams aim for a modular monolith, they often take the next "logical" step. They group these layers by what they believe are related features or modules:
 
 ```yaml
 - src
   - module#1
-  - controllers
-  - services
-  - use case
-  - entities
-  - repositories
+    - controllers
+    - services
+    - use case
+    - entities
+    - repositories
   - module#2
-  - controllers
-  - services
-  - use case
-  - entities
-  - repositories
+    - controllers
+    - services
+    - use case
+    - entities
+    - repositories
 ```
 
-I consider this way of modularizing the codebase as premature, as it forces you to make decisions when you have the least knowledge about the system. Sometimes, this kind of modularizing feels so artificial.
+Here's the thing though - I find this approach problematic. It forces teams to make critical structural decisions when they have the least understanding of their system. These early modularization attempts often feel artificial and constraining.
 
-So I was wondering 🤔
+This got me thinking 🤔
 
-- How could we defer the decision of modularizing `code structure` as much as possible?
-- How can I let `code structure` evolve organically?
+- What if we could postpone these structural decisions until we truly understand our system better?
+- How might we let the code structure evolve naturally, guided by actual usage patterns?
 
-There was another problem: If I wanted to make any changes, I had to make changes in 4-5 different packages such as controller, services, use case. In a lot of cases, I felt that it's a lot of ceremony and dancing around so many files. There was an urge to keep things together.
+There was another pain point that kept bothering me: Making even a simple feature change required touching 4-5 different packages - updating the controller, tweaking the service, modifying the use case, and so on. All this ceremony just felt... excessive. I kept feeling that related code should live closer together.
 
-Suddenly something clicked:
+Then it hit me, inspired by two familiar sayings:
 
 > _"Neurons that fire together wire together" or "Family that eats together, stays together"_
 {: .prompt-info }
 
-which leads to
+This led to what I consider a key insight:
 
 > **Code that changes together, stays together**
 {: .prompt-tip }
 
 ![vertical slice](/assets/blog/vertical-slice.png)
 
-As I moved code that was changing together closer, two things happened:
+When I started moving frequently-changed code closer together, two interesting things emerged:
 
-1. Code that came closer increased coupling between them (on the vertical axis).
-2. Coupling between different slices started to drop.
+1. Code within each feature slice became more tightly coupled (vertically) - and that was actually okay!
+2. Different feature slices became more loosely coupled from each other - a major win for maintainability.
 
-After spending more time with this approach, I learned that code that's shared across slices bubbled up and moved into the core of the feature or is a domain concept—or it's just a cross-cutting concern, which then could move up and find its own place not just in the codebase but also conceptually.
+The longer I worked with this approach, the more I noticed something fascinating: truly shared code naturally bubbled up to become either core domain concepts or cross-cutting concerns. These pieces found their rightful place not just in the codebase, but in our mental model of the system.
 
-In summary, this approach provided me with the following flexibilities:
+Here's what made this approach particularly valuable:
 
-- [x] Code structure can evolve as organically as our understanding of the domain concepts.
-- [x] Provides a way to be more pragmatic per slice.
-- [x] Provides a way of grouping that can scale with growing feature sets.
+- [x] The code structure evolved organically as our understanding of the domain deepened
+- [x] We could be pragmatic about implementation within each slice
+- [x] The organization scaled naturally with our growing feature set
 
----
-
-The final code structure was similar to 👇🏼
+Here's what the final structure typically looks like:
 
 ```yaml
 - src
   - todo
-  - api
-  - dto
-  - controller
-  - find-todos
-  - complete-todo
-  - new-todo
-  - todo
+    - api
+      - dto
+      - controller
+    - find-todos
+    - complete-todo
+    - new-todo
+    - todo
   - notes
-  - api
-  - dto
-  - controller
-  - new-notes
-  - recent-notes
-  - note
+    - api
+      - dto
+      - controller
+    - new-notes
+    - recent-notes
+    - note
 ```

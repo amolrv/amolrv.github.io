@@ -1,6 +1,6 @@
 ---
 categories: [Programming]
-title: Fine control over execution in kotlin
+title: Fine control over execution in Kotlin
 date: 2021-10-12 10:00:00
 tags: [kotlin, concurrency and parallelism]
 image:
@@ -9,165 +9,202 @@ image:
   w: 800
   h: 500
 ---
-Programming languages that support concurrency and parallelism need to provide a cancellation mechanism as well.
-A well-thought-out cancellation mechanism also gives space to clean up resources.
 
-In this blog post, we'll see how to cancel coroutines and the impact of suspend functions on them.
+One of Kotlin's most powerful features is its approach to concurrent programming through coroutines. At the heart of this system lies a concept called "cooperative cancellation" - a mechanism that allows coroutines to work together efficiently while maintaining the ability to be cancelled gracefully. In this post, we'll explore how suspension points enable this cooperation and how they affect your code's cancellation behavior.
 
-## Basics
+## Understanding Suspension Points
 
-The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="blank"} interface has a method called [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="blank"}, which allows you to cancel the job.
+A suspension point in Kotlin is a point in your code where a coroutine can:
 
-```kotlin
-fun main() = runBlocking {
-  val job = launch {
-    repeat(1_00) { i ->
-      delay(200)
-      println("printing $i")
-    }
-  }
+1. **Check for cancellation**: Verify if it should stop execution
+2. **Release the thread**: Allow other coroutines to run
+3. **Resume later**: Continue execution when resources are available
 
-  delay(1_150)
-  job.cancelAndJoin()
-  println("cancelled successfully")
-}
-// printing 0
-// printing 1
-// printing 2
-// printing 3
-// printing 4
-// cancelled successfully
-```
+Think of suspension points as "cooperation checkpoints" where your coroutine says, "I'm at a good stopping point. Does anyone need me to pause or stop?"
 
-Calling cancel has the following effects on the job:
+## The Basics: Jobs and Cancellation
 
-- Ends execution of the job at the first suspension point
-- If the job has children, they are also canceled at the first suspension point
-- Once a job is canceled, it cannot be used as a parent for any new coroutines.
-
-Let's verify our first assumption by replacing the `delay` call with `Thread.sleep`:
+The [`Job`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html){:target="blank"} interface is central to Kotlin's cancellation system. It provides a [`cancel`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html){:target="blank"} method that initiates the cancellation process. Here's a real-world example:
 
 ```kotlin
-fun main() = runBlocking {
-  val job = launch {
-    repeat(1_00) { i ->
-      // delay(200)
-      Thread.sleep(200)
-      println("printing $i")
-    }
-  }
+class UserRepository(
+    private val api: UserApi,
+    private val database: UserDatabase,
+    private val scope: CoroutineScope
+) {
+    private var syncJob: Job? = null
 
-  delay(1_150)
-  job.cancelAndJoin()
-  println("cancelled successfully")
-}
-// what will be the outcome?
-
-// outcome:
-// printing 0
-// printing ..
-// printing 99
-// cancelled successfully
-```
-
-## Thread blocking code
-
-Once we remove the delay function, the job has no suspension point and hence continues to work until the end of computation. `Thread.sleep` is a thread-blocking function.
-Let's extract the repeat code block into a suspended function.
-
-```kotlin
-fun main() = runBlocking {
-    val job = launch {
-        repeat(100) {
-          threadBlockingFn(it)
+    fun startSync() {
+        // Cancel any existing sync
+        syncJob?.cancel()
+        
+        syncJob = scope.launch {
+            try {
+                while (true) {
+                    println("Starting sync cycle...")
+                    
+                    val users = withContext(Dispatchers.IO) {
+                        api.fetchUsers() // Suspension point - network call
+                    }
+                    
+                    users.forEach { user ->
+                        // Yield periodically to cooperate with cancellation
+                        yield()
+                        database.updateUser(user)
+                    }
+                    
+                    println("Sync completed")
+                    delay(60_000) // Wait for 1 minute before next sync
+                }
+            } catch (e: CancellationException) {
+                println("Sync was cancelled")
+                throw e
+            } finally {
+                println("Cleaning up sync resources")
+            }
         }
-        println("job completed")
     }
-    delay(1_150)
-    job.cancelAndJoin()
-    println("cancelled successfully")
+
+    fun stopSync() {
+        syncJob?.cancel()
+    }
 }
 
-suspend fun threadBlockingFn(i: Int) = coroutineScope {
-    Thread.sleep(200)
-    println("printing $i")
+// Usage
+fun main() = runBlocking {
+    val repository = UserRepository(mockApi(), mockDatabase(), this)
+    
+    repository.startSync()
+    delay(3000) // Let it sync for 3 seconds
+    
+    repository.stopSync()
+    println("Sync stopped")
 }
-
-fun println(msg: Any) = with(Thread.currentThread()) {
-    kotlin.io.println("$id:$name\t=> $msg")
-}
-// what will be the outcome?
-
-// outcome:
-// 1:main => printing 0
-// 1:main => printing .. 🧐
-// 1:main => printing 99 🤔
-// 1:main => job completed
-// 1:main => cancelled successfully
 ```
 
-The `job` is running on a single thread, and even though we have a suspended function `threadBlockingFn`, the `main` thread does not get unblocked to observe the cancellation request. So, how do we create a suspension point in this case?
+When we call cancel on a job, three key things happen:
 
-In order to have more fine control, let's create a coroutine for every call of `threadBlockFn` and join it back with the parent job:
+1. The job is marked for cancellation
+2. At the next suspension point, the job checks this cancellation flag and stops execution
+3. Any child coroutines follow the same process at their next suspension points
+4. The cancelled job becomes unusable as a parent for new coroutines
+
+Let's look at a common mistake when dealing with cancellation - blocking operations:
 
 ```kotlin
-fun main() = runBlocking {
-    val job = launch {
-        repeat(1_00) {
-          launch { threadBlockingFn(it) }.join()
+class ImageProcessor(private val scope: CoroutineScope) {
+    private var processingJob: Job? = null
+
+    fun processImages(images: List<Image>) {
+        processingJob?.cancel()
+        
+        processingJob = scope.launch {
+            try {
+                images.forEach { image ->
+                    println("Processing image: ${image.name}")
+                    
+                    // BAD: This blocks the thread and ignores cancellation
+                    Thread.sleep(100)
+                    image.applyFilter()
+                    
+                    // GOOD: This cooperates with cancellation
+                    // delay(100)
+                    // ensureActive() // Explicit cancellation check
+                    // image.applyFilter()
+                    
+                    println("Image processed: ${image.name}")
+                }
+            } catch (e: CancellationException) {
+                println("Image processing cancelled")
+                throw e
+            }
         }
-        // also produces the same output
-        // repeat(1_00) { async { threadBlockingFn(it) }.await()   }
-        println("job completed")
     }
-    delay(1_150)
-    job.cancelAndJoin()
-    println("cancelled successfully")
 }
-// output:
-// 1:main => printing 0
-// 1:main => printing 1
-// 1:main => printing 2
-// 1:main => printing 3
-// 1:main => printing 4
-// 1:main => printing 5
-// 1:main => cancelled successfully
+
+// Usage showing the difference
+fun main() = runBlocking {
+    val processor = ImageProcessor(this)
+    val images = List(100) { Image("IMG_$it.jpg") }
+    
+    processor.processImages(images)
+    delay(250) // Let it process a few images
+    
+    processor.processingJob?.cancel()
+    println("Cancellation requested")
+}
+
+// With Thread.sleep: Continues processing all images
+// With delay: Stops after ~2-3 images
 ```
 
-Let's use the default dispatcher to delegate `threadBlockFn` execution:
+## Handling Long-Running Operations
+
+Here's a real-world example of how to handle long-running operations with proper resource management:
 
 ```kotlin
-fun main() = runBlocking {
-    val job = launch {
-        repeat(1_00) {
-          withContext(Dispatchers.Default) {
-            threadBlockingFn(it)
-          }
+class FileUploader(
+    private val api: FileApi,
+    private val scope: CoroutineScope
+) {
+    private val activeUploads = mutableMapOf<String, Job>()
+
+    fun startUpload(fileId: String, file: File) {
+        // Cancel existing upload if any
+        activeUploads[fileId]?.cancel()
+        
+        activeUploads[fileId] = scope.launch {
+            try {
+                val fileStream = withContext(Dispatchers.IO) {
+                    FileInputStream(file)
+                }
+                
+                fileStream.use { stream ->
+                    val buffer = ByteArray(8192)
+                    var bytesRead: Int
+                    var totalBytes = 0L
+                    
+                    while (stream.read(buffer).also { bytesRead = it } != -1) {
+                        ensureActive() // Check for cancellation
+                        
+                        withContext(Dispatchers.IO) {
+                            api.uploadChunk(fileId, buffer, bytesRead)
+                        }
+                        
+                        totalBytes += bytesRead
+                        println("Uploaded $totalBytes bytes")
+                        
+                        yield() // Cooperate with other coroutines
+                    }
+                }
+                
+                println("Upload completed for $fileId")
+            } catch (e: CancellationException) {
+                println("Upload cancelled for $fileId")
+                throw e
+            } finally {
+                activeUploads.remove(fileId)
+                println("Cleaned up upload resources for $fileId")
+            }
         }
-        println("job completed")
     }
-    delay(1_150)
-    job.cancelAndJoin()
-    println("cancelled successfully")
+
+    fun cancelUpload(fileId: String) {
+        activeUploads[fileId]?.cancel()
+    }
 }
-// output:
-// 14:DefaultDispatcher-worker-1 => printing 0
-// 14:DefaultDispatcher-worker-1 => printing 1
-// 14:DefaultDispatcher-worker-1 => printing 2
-// 14:DefaultDispatcher-worker-1 => printing 3
-// 14:DefaultDispatcher-worker-1 => printing 4
-// 14:DefaultDispatcher-worker-1 => printing 5
-// 1:main => cancelled successfully
 ```
 
 ### Summary
 
-Coroutines, dispatchers, and suspended functions provide a very powerful mechanism to have full control over the execution of code blocks.
-Default functions such as `delay` are cancel-aware functions.
-To summarize, I would suggest the following thumb rules to achieve fine control over code execution:
+Through these real-world examples, we've learned that effective coroutine cancellation relies on proper suspension points. Here are the key principles for writing cancellation-aware coroutines:
 
-1. Have more suspension points in your codebase
-2. Avoid thread-blocking code areas
-3. Coroutines are very lightweight; use them more frequently
-4. Use `async/await`, `withContext` in appropriate places
-5. Break down computation-heavy operations into smaller pieces with more suspension points
+1. Use suspend functions that create real suspension points (`delay`, `yield`, `withContext`, etc.)
+2. Avoid thread-blocking operations that prevent cooperation
+3. Properly handle resources with try-finally blocks
+4. Check cancellation status regularly with `ensureActive()`
+5. Use structured concurrency with parent-child job relationships
+6. Consider using supervisorScope for independent child failures
+7. Always clean up resources in finally blocks
+
+By following these guidelines, you'll create more robust and maintainable concurrent applications that can handle cancellation gracefully.

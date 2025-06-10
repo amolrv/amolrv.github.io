@@ -1,6 +1,6 @@
 ---
 categories: [Lessons]
-title: Nature, Impact and Value of Change
+title: Understanding Change to Improve Release Planning
 date: 2022-02-15 10:00:00
 tags: [product, change]
 image:
@@ -8,45 +8,58 @@ image:
   src: /assets/blog/aziz-acharki-PUvPZckRnOg-unsplash.jpg
   w: 800
   h: 500
-published: false
 ---
 
-In this article, I'm sharing lessons and learnings about change. Understanding the **nature, impact, and value of change** brought more clarity and confidence, and helped me prepare a release plan.
+In this article, I share the lessons and insights I’ve gained about change. Developing a clear understanding of the **nature, impact, and value of change** has given me greater confidence and enabled me to create more effective release plans.
+
+---
 
 ## Situation 🧺
 
-Like my other colleagues, I have also been part of such a _Taskforce_ a couple of times. But recently, in my task force, it was becoming very hard to come up with a proper release plan. We were struggling to make a release plan that could be delivered _incrementally_ and _iteratively_.
+Like many of my colleagues, I’ve participated in several _Taskforces_. Recently, however, the taskforce I was part of struggled to develop a solid release plan. We found it challenging to design a plan that could be delivered both _incrementally_ and _iteratively_.
+
+---
 
 ## Background 📜
 
-### What is a Taskforce? 🤔
+### What Is a Taskforce? 🤔
 
-At [layer](https://golayer.io/about/){:target="_blank"}, we form a triplet of _Tech, Product, and Business_ to refine features—usually one person from each area. Sometimes, the Product Owner represents business expertise or acts as a proxy for business. For each epic, people rotate from each area. This helps create opportunities to learn, grow, and avoid biases in the company. We call such a triplet a _Taskforce_.
+At [layer](https://golayer.io/about/){:target="_blank"}, we assemble a triplet of _Tech, Product, and Business_ representatives—typically one person from each area—to refine features. Sometimes, the Product Owner steps in to provide business expertise or acts as a proxy for the business. For each epic, team members rotate through these roles, which fosters learning, growth, and helps minimize bias within the company. We call this trio a _Taskforce_.
 
-The task force has the following responsibilities 💪
+The taskforce is responsible for:
 
-- Refine features (aka epics)
-- Be a point of contact for all QA during crunch time
-- Prepare the release plan
+- Refining features (also known as epics)
+- Acting as the main point of contact for all QA during critical periods
+- Preparing the release plan
 
-## Still, the picture was not very clear 🧠
+---
 
-We had a few brainstorming meetings, but the picture was still not very clear in our heads. So I decided to analyze this epic critically and come up with some options.
+## The Picture Remained Unclear 🧠
 
-## What we did 🤞
+Despite several brainstorming sessions, we still lacked a clear direction. To break the deadlock, I decided to analyze the epic more critically and explore different approaches.
 
-I decided to start from a clean slate and look at this feature from the user's point of view. To do that, I asked the following questions for each concept and change we wanted to bring in:
+---
 
-1. What problem does it solve for the user?
-2. What problem might it create for the user?
-3. What is the nature of these changes?
+## Our Approach 🤞
 
-- Breaking change – if it breaks or changes an existing concept/feature drastically and affects user flow
-- New change – if there were no such concepts before in the system; may or may not affect user flow
-- Enhancement – changes that refine existing concepts but not so drastically, and may not affect user flow
+I went back to basics and examined the feature from the user’s perspective. For each concept or change we wanted to introduce, I asked myself:
 
-After doing this analysis and spending a few hours, I realized more than 70% of changes were either enhancements or new changes, and ~30% were breaking changes. Just doing this analysis unblocked a very big chunk of features and brought a ton of clarity to my head.
+1. What problem does this solve for the user?
+2. What new problem could this create for the user?
+3. What is the nature of this change?
 
-For breaking changes, I did one extra step: I asked the same three questions for an existing feature to gain more clarity. After that, I knew exactly what we were taking out and giving back to the user. Now it was very easy to spot and fill the gaps.
+I categorized each change as one of the following:
 
-In summary, understanding the nature, impact, and value of incoming changes is very useful in shaping the overall plan.
+- **Breaking change** – Significantly alters or removes an existing concept or feature, affecting user flow
+- **New change** – Introduces something completely new to the system; may or may not impact user flow
+- **Enhancement** – Improves an existing concept without major disruption; may not affect user flow
+
+After this analysis, I discovered that over 70% of the changes were either enhancements or new features, while about 30% were breaking changes. This exercise alone helped unblock a large portion of features and brought much-needed clarity.
+
+For breaking changes, I took an additional step: I asked the same three questions about the existing feature. This allowed me to clearly see what we were removing and what we were offering in return. It became much easier to spot and address any gaps.
+
+---
+
+## Conclusion
+
+In summary, understanding the nature, impact, and value of upcoming changes is invaluable when shaping an effective release plan. This clarity not only streamlines the planning process but also ensures that the team delivers meaningful improvements to users.

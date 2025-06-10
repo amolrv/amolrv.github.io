@@ -5,26 +5,24 @@ date: 2020-01-27 09:52:21
 tags: [toolkit, kotlin, functional programming]
 ---
 
-A couple of weeks ago, I was looking for a very simple way to create a web server. I found [http4k]{:target="_blank"}, which is a lightweight but fully-featured HTTP toolkit written in pure Kotlin that enables the serving and consuming of HTTP services in a functional and consistent way.
+While searching for a minimalist approach to creating web servers, I discovered [http4k]{:target="_blank"}, a remarkable HTTP toolkit that caught my attention. Written in pure Kotlin, http4k stands out by offering a lightweight yet comprehensive solution for both serving and consuming HTTP services. What makes it truly special is its functional approach and consistent API design.
 
-#### Some Features of http4k
+## Key Features of http4k
 
-- Small, written in functional Kotlin with zero dependencies
-- Very simple, no magic, no reflection
-- Immutable HTTP model, which makes it very easy to test/debug
-- Serverless / server independent
+- **Pure Kotlin Implementation**: Built entirely in functional Kotlin with zero external dependencies
+- **Simplicity at its Core**: No magic, no reflection - just pure functional programming
+- **Immutable HTTP Model**: Makes debugging and testing straightforward and predictable
+- **Cloud-Ready**: Works seamlessly in both serverless and traditional server environments
 
-## WebServer as a Function
+## The "Server as a Function" Concept
 
-http4k is designed as an application as a function.
-A web server can be viewed as one big function that handles requests.
-It's literally represented as a typealias:
+At its heart, http4k embodies a beautifully simple concept: a web server is essentially just a function that processes requests. This idea is elegantly captured in a single typealias:
 
 ```kotlin
 typealias HttpHandler = (HttpRequest) -> HttpResponse
 ```
 
-An endpoint that echoes the request body can be created with just two simple lines:
+Here's how straightforward it is to create an endpoint that echoes back the request body:
 
 ```kotlin
 val app: HttpHandler = {
@@ -33,21 +31,17 @@ val app: HttpHandler = {
 val server = app.asServer(SunHttp(8000)).start()
 ```
 
-Request and Response are immutable objects.
-SunHttp is a container which is only meant for development.
-For production, use Netty, Jetty, ApacheServer, etc.
-Because `app` is just a Kotlin function, it can be composed very easily.
+Request and Response objects in http4k are immutable, which enhances reliability and predictability. While SunHttp serves well for development purposes, for production environments, you can easily switch to more robust options like Netty, Jetty, or ApacheServer. Since `app` is fundamentally just a Kotlin function, it's highly composable - a key feature we'll explore next.
 
-## Filters
+## Filters: Enhancing Your HTTP Pipeline
 
-http4k provides a `Filter` function, which is basically
-a way to intercept the Request/Response pipeline.
+http4k provides a powerful concept called `Filter`, which allows you to intercept and modify the Request/Response pipeline. A Filter is defined as:
 
 ```kotlin
 typealias Filter = (HttpHandler) -> HttpHandler
 ```
 
-The code snippet below shows typical composition of HttpHandlers:
+Here's a practical example of how to compose HttpHandlers using filters:
 
 ```kotlin
 val setContentType = Filter { nextHandler ->
@@ -61,9 +55,7 @@ val composedApp = setContentType.then(app)
 
 ## Routing and Composition
 
-http4k provides some high-level functions which help to compose applications
-that handle each request differently depending upon URL, method, etc.
-These functions accept multiple HttpHandlers and return a composed handler.
+http4k excels at composing applications through its high-level routing functions. These functions allow you to create sophisticated routing hierarchies while maintaining code clarity:
 
 ```kotlin
 val app : HttpHandler = routes(
@@ -77,11 +69,8 @@ val app : HttpHandler = routes(
 
 ## Conclusion
 
-http4k really stands by the promises they made.
-APIs from http4k are written very thoughtfully and are not opinionated.
-They are easy to reason with and work with.
-The only downside can be the lack of coroutine support.
+My experience with http4k has been overwhelmingly positive. The framework delivers on its promises with thoughtfully designed, unopinionated APIs that are both intuitive and pragmatic. The functional approach makes the code easy to reason about and maintain. While the framework currently doesn't support coroutines, its excellent design principles and simplicity make it a compelling choice for Kotlin HTTP applications.
 
-To know more about http4k rationale, visit [http4k/rationale](https://www.http4k.org/rationale/){:target="_blank"}
+For a deeper dive into http4k's design philosophy and rationale, visit [http4k/rationale](https://www.http4k.org/rationale/){:target="_blank"}
 
 [http4k]: https://www.http4k.org/
