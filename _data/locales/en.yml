@@ -11,7 +11,7 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
-  categories: Categories
+  categories: Sections
   tags: Tags
   archives: Archives
   about: About
@@ -84,8 +84,8 @@ df:
 # categories page
 categories:
   category_measure:
-    singular: category
-    plural: categories
+    singular: section
+    plural: sections
   post_measure:
     singular: post
     plural: posts

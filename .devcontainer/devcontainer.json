@@ -13,17 +13,7 @@
 	"postCreateCommand": "bundle install",
 	"customizations": {
 		"vscode": {
-			"settings": {},
-			"extensions": [
-				"vscode-icons-team.vscode-icons",
-				"streetsidesoftware.code-spell-checker",
-				"eamodio.gitlens",
-				"davidanson.vscode-markdownlint",
-				"yzhang.markdown-all-in-one",
-				"christian-kohler.path-intellisense",
-				"redhat.vscode-xml",
-				"esbenp.prettier-vscode"
-			]
+			"settings": {}
 		}
 	}
 }
